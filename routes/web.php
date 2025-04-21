@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,12 +28,18 @@ Route::post('/data', [UserController::class, 'signup'])->name('login.submit');
 Route::post('/checklogin',[UserController::class, 'checkLogin'])->name('index.submit');
 
 //for layouts
-Route::view('/master', 'backend.layouts.master');
+// Route::view('/master', 'backend.layouts.master');
 // Route::view('/dashboard', 'dashboard');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+//for category
+Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
+Route::get('/category/create', [CategoryController::class, 'create'])->name('backend.category.create');
+Route::post('/category/store', [CategoryController::class, 'store'])->name('category.store');
+
 
 
 
