@@ -1,10 +1,21 @@
-@extends('layouts.master')
+@extends('backend.layouts.master')
 
 @section('title', 'Add Category')
 
 @section('content')
 <div class="container mt-4">
     <h2>Add Category</h2>
+
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
     <form action="{{ route('category.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
@@ -18,6 +29,12 @@
         <div class="form-group mb-3">
             <label for="image">Category Image:</label>
             <input type="file" class="form-control" id="image" name="image">
+        </div>
+
+        {{-- Description --}}
+        <div class="form-group mb-3">
+            <label for="desc">Description:</label>
+            <input type="text" class="form-control" id="desc" name="description">
         </div>
 
         {{-- Status --}}

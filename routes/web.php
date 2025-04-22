@@ -37,7 +37,7 @@ Route::get('/dashboard', function () {
 
 //for category
 Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
-Route::get('/category/create', [CategoryController::class, 'create'])->name('backend.category.create');
+Route::get('/category/create', [CategoryController::class, 'create'])->name('category.create');
 Route::post('/category/store', [CategoryController::class, 'store'])->name('category.store');
 
 

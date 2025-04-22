@@ -92,7 +92,7 @@
 
 <!-- Nav Item - Charts -->
 <li class="nav-item">
-    <a class="nav-link" href="charts.html">
+    <a class="nav-link" href="{{ route('category.index')}}">
         <i class="fas fa-fw fa-chart-area"></i>
         <span>Category</span></a>
 </li>
