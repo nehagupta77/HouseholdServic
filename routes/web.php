@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\productController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,15 @@ Route::post('/category/store', [CategoryController::class, 'store'])->name('cate
 Route::get('/category/delete/{id}', [CategoryController::class, 'delete'])->name('category.delete');
 Route::get('/category/edit/{id}', [CategoryController::class, 'edit'])->name('category.edit');
 Route::post('/category/update/{id}', [CategoryController::class, 'update'])->name('category.update');
+
+//for product
+Route::get('/product', [ProductController::class, 'index'])->name('product.index');
+Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
+Route::post('/product/store', [ProductController::class, 'store'])->name('product.store');
+Route::get('/product/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
+Route::post('/product/update/{id}', [ProductController::class, 'update'])->name('product.update');
+Route::get('/product/delete/{id}', [ProductController::class, 'delete'])->name('product.delete');
+
 
 
 
