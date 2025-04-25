@@ -104,6 +104,12 @@
         <span>Product</span></a>
 </li>
 
+<li class="nav-item">
+    <a class="nav-link" href="{{ route('userdetails.userdetail')}}">
+        <i class="fas fa-fw fa-table"></i>
+        <span>userDetails</span></a>
+</li>
+
 <!-- Divider -->
 <hr class="sidebar-divider d-none d-md-block">
 

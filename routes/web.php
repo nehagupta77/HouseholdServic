@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\productController;
+use App\Http\Controllers\userdetailscontroler;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -54,7 +56,9 @@ Route::get('/product/delete/{id}', [ProductController::class, 'delete'])->name('
 
 
 
+// userdetails
 
-
-
-
+Route::get('/userdetails', [userdetailscontroler::class, 'userdetail'])->name('userdetails.userdetail');
+// Route::get('/userdetails/{id}/edit', [userdetailscontroler::class, 'edit'])->name('userdetails.edit');
+// Route::put('/userdetails/{id}', [userdetailscontroler::class, 'update'])->name('userdetails.update');
+// Route::delete('/userdetails/{id}', [userdetailscontroler::class, 'destroy'])->name('userdetails.destroy');
