@@ -54,11 +54,16 @@ Route::get('/product/edit/{id}', [ProductController::class, 'edit'])->name('prod
 Route::post('/product/update/{id}', [ProductController::class, 'update'])->name('product.update');
 Route::get('/product/delete/{id}', [ProductController::class, 'delete'])->name('product.delete');
 
-
-
 // userdetails
-
 Route::get('/userdetails', [userdetailscontroler::class, 'userdetail'])->name('userdetails.userdetail');
 // Route::get('/userdetails/{id}/edit', [userdetailscontroler::class, 'edit'])->name('userdetails.edit');
 // Route::put('/userdetails/{id}', [userdetailscontroler::class, 'update'])->name('userdetails.update');
 // Route::delete('/userdetails/{id}', [userdetailscontroler::class, 'destroy'])->name('userdetails.destroy');
+
+//for price 
+Route::get('/price', [ProductController::class, 'index'])->name('price.index');
+Route::get('/price/create', [ProductController::class, 'create'])->name('price.create');
+Route::post('/price/store', [ProductController::class, 'store'])->name('price.store');
+Route::get('/price/edit/{id}', [ProductController::class, 'edit'])->name('price.edit');
+Route::post('/price/update/{id}', [ProductController::class, 'update'])->name('price.update');
+Route::get('/price/delete/{id}', [ProductController::class, 'delete'])->name('price.delete');

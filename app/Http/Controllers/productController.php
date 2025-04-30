@@ -12,8 +12,9 @@ class productController extends Controller
     // Show all products
     public function index()
     {
-        $data['products'] = Product::all();
+        $data['products'] = Product::with('category')->get();//join
         $data['categories'] = Category::where('status',1)->get();
+        // dd($data);
         return view('backend.product.index', $data);
     }
 

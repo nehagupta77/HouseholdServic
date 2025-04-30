@@ -9,7 +9,7 @@
         <thead class="thead-dark">
             <tr>
                 <th>S.N</th>
-                <th>Name</th>
+                <th>Category_Name</th>
                 <th>Description</th>
                 <th>Image</th>
                 <th>Status</th>

@@ -21,7 +21,8 @@
         @foreach($products as $product)
             <tr>
                 <td>{{ $loop->iteration }}</td>
-                <td></td>
+                <!-- join -->
+                <td>{{ $product->category->name ??'' }}</td> 
                 <td>{{ $product->name }}</td>
                 <td>{{ $product->description }}</td>
                 <td>{{ $product->price }}</td>
