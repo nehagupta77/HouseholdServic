@@ -1068,7 +1068,7 @@
     <!-- End lastest-blog section -->
 
     <!-- Start footer section -->
-    <!-- <footer class="footer-1">
+    <footer class="footer-1">
         <img src="assets/images/footer-left-shape.png" alt="" class="line-shape">
         <div class="container">
             <div class="footer-top">
@@ -1164,7 +1164,7 @@
                 </div>
             </div>
         </div>
-    </footer> -->
+    </footer>
     <!-- End footer section -->
 
     <!--  Main jQuery  -->

@@ -8,14 +8,6 @@ use App\Models\product;
 
 class PriceController extends Controller
 {
-    // Show all products
-    // public function index()
-    // {
-    //     $data['products'] = Product::with('category')->get();//join
-    //     $data['price'] = Price::where('status',1)->get();
-    //     // dd($data);
-    //     return view('backend.pricing.index', $data);
-    // }
 
     public function index()
     {
@@ -24,13 +16,6 @@ class PriceController extends Controller
         // dd($data);
         return view('backend.pricing.index', $data);
     }
-
-    // Show the form for creating a new product
-    // public function create()
-    // {
-    //     $data['price'] = Price::where('status',1)->get();
-    //     return view('backend.pricing.create', $data);
-    // }
 
     public function create()
     {
@@ -51,12 +36,7 @@ class PriceController extends Controller
             'price' => 'required|numeric',
             'discount' => 'nullable|numeric'
         ]);
-
-        // $image_name = null;
-        // if ($request->hasFile('image')) {
-        //     $image_name = time() . rand(0, 1000000) . '.' . $request->image->getClientOriginalExtension();
-        //     $request->image->move(public_path('uploads'), $image_name);
-        // }
+        
         $data = [
             'product_id' => $request->product_id,
             'price' => $request->price,
@@ -78,6 +58,7 @@ class PriceController extends Controller
 
         if($price){
             $data['price'] = $price;
+            $data['products'] = product::all();
             return view('backend.pricing.edit',$data);
         }
 
@@ -102,37 +83,11 @@ class PriceController extends Controller
                 'discount' => 'required'
             ]);
     
-            // $image_name = null;
-    
-            // if($request->image && $request->hasFile('image')){
-                
-            //     if($product->image){
-            //         $filepath = public_path().'/uploads/'. $product->image;
-
-            //         if(file_exists($filepath))
-            //         {
-            //             unlink($filepath);
-            //         }
-            //     }
-
-
-            //     $file =  $request->image;
-            //     $image_name =  time(). rand(0,1000000000). $file->getClientOriginalName();
-            //     $path = public_path().'/uploads';
-            //     $file->move($path, $image_name);
-    
-            // }
-    
-    
             $data =[
                 'price' =>$request->price,
                 'discount' => $request->discount
             ];
             
-            // if(!empty($image_name)){
-            //     $data['image'] = $image_name;
-            // }
-    
             Price::where('id', $id)->update($data);
             return redirect()->route('pricing.index');
         }

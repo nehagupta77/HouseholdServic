@@ -100,20 +100,26 @@
 <!-- Nav Item - Tables -->
 <li class="nav-item">
     <a class="nav-link" href="{{ route('product.index')}}">
-        <i class="fas fa-fw fa-table"></i>
+        <i class="fas fa-box"></i>
         <span>Product</span></a>
 </li>
 
 <li class="nav-item">
     <a class="nav-link" href="{{ route('userdetails.userdetail')}}">
-        <i class="fas fa-fw fa-table"></i>
+        <i class="fas fa-id-card"></i>
         <span>userDetails</span></a>
 </li>
 
 <li class="nav-item">
     <a class="nav-link" href="{{ route('pricing.index')}}">
-        <i class="fas fa-fw fa-table"></i>
+        <i class="fas fa-tags"></i>
         <span>Price</span></a>
+</li>
+
+<li class="nav-item">
+    <a class="nav-link" href="{{ route('setting.systemSetting')}}">
+        <i class="fas fa-cogs"></i>
+        <span>System Setting</span></a>
 </li>
 
 <!-- Divider -->

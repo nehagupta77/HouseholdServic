@@ -6,6 +6,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\productController;
 use App\Http\Controllers\userdetailscontroler;
 use App\Http\controllers\PriceController;
+use App\Http\Controllers\SettingController;
 
 
 /*
@@ -71,3 +72,6 @@ Route::post('/pricing/store', [PriceController::class, 'store'])->name('pricing.
 Route::get('/pricing/edit/{id}', [PriceController::class, 'edit'])->name('pricing.edit');
 Route::post('/pricing/update/{id}', [PriceController::class, 'update'])->name('pricing.update');
 Route::get('/pricing/delete/{id}', [PriceController::class, 'delete'])->name('pricing.delete');
+
+//for Setting
+Route::get('/settings', [SettingController::class, 'system'])->name('setting.systemSetting');

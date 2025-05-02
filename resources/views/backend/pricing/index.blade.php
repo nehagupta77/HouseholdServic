@@ -18,7 +18,7 @@
     @forelse($prices as $price)
         <tr>
             <td>{{ $loop->iteration }}</td>
-            <td>{{ $price->product->product_name ?? '' }}</td>
+            <td>{{ $price->product->name ?? '' }}</td>
             <td>{{ $price->price }}</td>
             <td>{{ $price->discount ?? '0' }}</td>
             <td>
