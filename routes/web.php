@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\productController;
 use App\Http\Controllers\userdetailscontroler;
+use App\Http\controllers\PriceController;
 
 
 /*
@@ -61,9 +62,9 @@ Route::get('/userdetails', [userdetailscontroler::class, 'userdetail'])->name('u
 // Route::delete('/userdetails/{id}', [userdetailscontroler::class, 'destroy'])->name('userdetails.destroy');
 
 //for price 
-Route::get('/price', [ProductController::class, 'index'])->name('price.index');
-Route::get('/price/create', [ProductController::class, 'create'])->name('price.create');
-Route::post('/price/store', [ProductController::class, 'store'])->name('price.store');
-Route::get('/price/edit/{id}', [ProductController::class, 'edit'])->name('price.edit');
-Route::post('/price/update/{id}', [ProductController::class, 'update'])->name('price.update');
-Route::get('/price/delete/{id}', [ProductController::class, 'delete'])->name('price.delete');
+Route::get('/pricing', [PriceController::class, 'index'])->name('pricing.index');
+Route::get('/pricing/create', [PriceController::class, 'create'])->name('pricing.create');
+Route::post('/pricing/store', [PriceController::class, 'store'])->name('pricing.store');
+Route::get('/pricing/edit/{id}', [PriceController::class, 'edit'])->name('pricing.edit');
+Route::post('/pricing/update/{id}', [PriceController::class, 'update'])->name('pricing.update');
+Route::get('/pricing/delete/{id}', [PriceController::class, 'delete'])->name('pricing.delete');

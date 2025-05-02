@@ -11,6 +11,11 @@ class Price extends Model
     use HasFactory;
     protected $table = 'price';
 
+    public function product()
+    {
+        return $this->belongsTo(product::class);
+    }
+
     protected $fillable = [
         'price',
         'discount'

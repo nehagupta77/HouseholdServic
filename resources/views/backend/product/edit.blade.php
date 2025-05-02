@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="container mt-4">
-    <h2>create product</h2>
+    <h2>Edit product</h2>
 
     @if ($errors->any())
     <div class="alert alert-danger">

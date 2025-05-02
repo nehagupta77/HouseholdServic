@@ -18,7 +18,12 @@ class product extends Model
         return $this->belongsTo(Category::class);
     }
 
-    protected $fillable = [
-        'name', 'description', 'price', 'image', 'status'
-    ];
+    //relationship with price
+    public function price()
+    {
+        return $this->hasMany(Price::class);
+    }
+
+    
+   protected $guarded = ['id'];
 }
