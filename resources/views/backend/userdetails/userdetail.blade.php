@@ -2,7 +2,6 @@
 @section('title','userdetail')
 @section('content')
 
-<a href ='{{ route("category.create")}}' class='btn btn-primary mb-3 float-end'> Create</a>
 
 <div class="table-responsive">
     <table class="table table-bordered table-striped table-hover">
@@ -17,12 +16,19 @@
         </thead>
 
         <tbody>
-            @forelse($user as $user)
+            @forelse($users as $user)
             <tr>
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $user->first_name ?? '' }}</td>
                 <td>{{ $user->last_name ?? '' }}</td>
                 <td>{{ $user->email ?? '' }}</td>
+
+                <td>
+                    <a href="{{ route('userdetails.edit', $user->id) }}" class="btn btn-success btn-sm">Edit</a>
+                    <a href="{{ route('userdetails.delete', $user->id) }}" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+
+
             </tr>
             @empty
             <tr>

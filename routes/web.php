@@ -57,9 +57,12 @@ Route::get('/product/delete/{id}', [ProductController::class, 'delete'])->name('
 
 // userdetails
 Route::get('/userdetails', [userdetailscontroler::class, 'userdetail'])->name('userdetails.userdetail');
-// Route::get('/userdetails/{id}/edit', [userdetailscontroler::class, 'edit'])->name('userdetails.edit');
-// Route::put('/userdetails/{id}', [userdetailscontroler::class, 'update'])->name('userdetails.update');
-// Route::delete('/userdetails/{id}', [userdetailscontroler::class, 'destroy'])->name('userdetails.destroy');
+Route::get('userdetails/create', [userdetailscontroler::class, 'create'])->name('userdetails.create');
+Route::post('userdetails', [userdetailscontroler::class, 'store'])->name('userdetails.store');
+Route::get('userdetails/{id}/edit', [userdetailscontroler::class, 'edit'])->name('userdetails.edit');
+Route::put('userdetails/{id}', [userdetailscontroler::class, 'update'])->name('userdetails.update');
+Route::get('userdetails/{id}/delete', [userdetailscontroler::class, 'delete'])->name('userdetails.delete');
+
 
 //for price 
 Route::get('/pricing', [PriceController::class, 'index'])->name('pricing.index');
