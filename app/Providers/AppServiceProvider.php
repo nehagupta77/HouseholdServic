@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Providers;
+use App\Services\SiteSettingService;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +15,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->singleton(SiteSettingService::class, function () {
+            return new SiteSettingService();
+        });
     }
 
     /**
@@ -23,6 +27,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        View::composer('*', function ($view) {
+            try {
+                $settings = app(SiteSettingService::class);
+                $view->with('globalSettings', $settings);
+            } catch (\Exception $e) {
+                $view->with('globalSettings', null);
+            }
+        });
     }
 }

@@ -150,9 +150,9 @@
         <div class="container-fluid">
             <div class="hero-wrapper">
                 <div class="hero-content wow animate fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
-                    <span>Wellcome Our Service Sale</span>
-                    <h1>Nonstop Services Life Better.</h1>
-                    <p>Household services make daily life easier by providing professional help with cleaning, cooking, laundry, and home maintenance. Whether it’s keeping your space spotless, preparing delicious meals, or handling repairs, these services ensure comfort and convenience. With skilled professionals taking care of household tasks, you can save time, reduce stress, and enjoy a well-managed home effortlessly.</p>
+                    <span>Wellcome Our {{ $globalSettings->get('name') }}</span>
+                    <h1>{{ $globalSettings->get('hero_text')}}</h1>
+                    <p>{{ $globalSettings->get('agency_description')}}</p>
                     <div class="find-service">
                         <div class="location-search">
                             <!-- <div class="location-btn">
@@ -1118,8 +1118,8 @@
                                         <i class="fas fa-phone-alt"></i>
                                     </div>
                                     <div class="desc">
-                                        <a href="tel:01761111456">+880 176 1111 456</a>
-                                        <a href="tel:01761111555">+880 176 1111 555</a>
+                                        <a href="tel:01761111456">{{ $globalSettings->get('phone')}}</a>
+                                        <a href="tel:01761111555">{{ $globalSettings->get('phone')}}</a>
                                     </div>
                                 </div>
                                 <div class="info">
@@ -1127,8 +1127,8 @@
                                         <i class="far fa-envelope"></i>
                                     </div>
                                     <div class="desc">
-                                        <a href="https://demo-egenslab.b-cdn.net/cdn-cgi/l/email-protection#88e1e6eee7c8edf0e9e5f8e4eda6ebe7e5"><span class="__cf_email__" data-cfemail="6b02050d042b0e130a061b070e45080406">[email&#160;protected]</span></a>
-                                        <a href="https://demo-egenslab.b-cdn.net/cdn-cgi/l/email-protection#7a13141c153a090f0a0a15080e54191517"><span class="__cf_email__" data-cfemail="88e1e6eee7c8fbfdf8f8e7fafca6ebe7e5">[email&#160;protected]</span></a>
+                                        <a href="https://demo-egenslab.b-cdn.net/cdn-cgi/l/email-protection#88e1e6eee7c8edf0e9e5f8e4eda6ebe7e5"><span class="__cf_email__" data-cfemail="6b02050d042b0e130a061b070e45080406">{{ $globalSettings->get('email')}}</span></a>
+                                        <a href="https://demo-egenslab.b-cdn.net/cdn-cgi/l/email-protection#7a13141c153a090f0a0a15080e54191517"><span class="__cf_email__" data-cfemail="88e1e6eee7c8fbfdf8f8e7fafca6ebe7e5">{{ $globalSettings->get('email')}}</span></a>
                                     </div>
                                 </div>
                                 <div class="info">
@@ -1136,7 +1136,7 @@
                                         <i class="fas fa-map-marker-alt"></i>
                                     </div>
                                     <div class="desc">
-                                        <p>168/170, Avenue 01, Mirpur DOHS, Bangladesh</p>
+                                        <p>{{ $globalSettings->get('address')}}</p>
                                     </div>
                                 </div>
                             </div>

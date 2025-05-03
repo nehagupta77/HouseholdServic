@@ -7,6 +7,8 @@ use App\Http\Controllers\productController;
 use App\Http\Controllers\userdetailscontroler;
 use App\Http\controllers\PriceController;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\SystemSettingController;
+use App\Services\SiteSettingService;
 
 
 /*
@@ -21,8 +23,8 @@ use App\Http\Controllers\SettingController;
 */
 
 Route::get('/', function () {
-    return view('
-    frontend.index');
+    $settings = app(SiteSettingService::class);
+    return view('frontend.index')->with('globalSettings', $settings);
 });
 
 //auth
@@ -75,3 +77,4 @@ Route::get('/pricing/delete/{id}', [PriceController::class, 'delete'])->name('pr
 
 //for Setting
 Route::get('/settings', [SettingController::class, 'system'])->name('setting.systemSetting');
+Route::post('/setting/store', [SystemSettingController::class, 'store'])->name('setting.systemSetting.store');
