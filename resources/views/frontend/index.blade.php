@@ -204,7 +204,7 @@
                     <div class="sec-title layout-1 wow animate fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
                         <div class="title-left">
                             <span>Category</span>
-                            <h2>See Our All Creative Services</h2>
+                            <h2>{{ $globalSettings->get('category')}}</h2>
                         </div>
                         <!-- <div class="title-right">
                             <strong>Category</strong>
@@ -1028,7 +1028,7 @@
             <div class="row g-4">
                 <div class="col-md-6 col-lg-4 wow animate fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
                     <div class="single-blog">
-                        <div class="blog-thumb">
+                  copy      <div class="blog-thumb">
                             <a href="blog-details.html"><img src="assets/images/blog/blog-1.jpg" alt=""></a>
                         </div>
                         <div class="blog-inner">
@@ -1078,7 +1078,7 @@
                             <div class="footer-logo">
                                 <a href="index-2.html"><img src="assets/images/footer-logo.svg" alt=""></a>
                             </div>
-                            <p>Aenean fermentum sapien acena gravida. Fusce a ipsum metuslai. Suspendisse oi potenti.</p>
+                            <p>{{ $globalSettings->get('footer_text')}}</p>
                             <div class="request-btn">
                                 <a href="contact.html">Request a Service</a>
                             </div>
@@ -1148,7 +1148,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <div class="copy-right">
-                            <span>Copyright 2022 Serve | Design By <a href="https://www.egenslab.com/">Egens Lab</a></span>
+                            <span>{{ $globalSettings->get('copyright')}} | Design By <a href="https://www.egenslab.com/">Egens Lab</a></span>
                         </div>
                     </div>
                     <div class="col-lg-6">

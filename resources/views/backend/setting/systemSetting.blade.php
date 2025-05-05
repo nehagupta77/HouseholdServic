@@ -46,6 +46,11 @@
         </div>
 
         <div class="form-group">
+            <label for="category">Category</label>
+            <textarea class="form-control" id="category" name="category" rows="3">{{ $settings['category'] ?? '' }}</textarea>
+        </div>
+
+        <div class="form-group">
             <label for="phone">Phone Number</label>
             <input type="tel" class="form-control" id="phone" name="phone" value="{{ $settings['phone'] ?? '' }}">
         </div>
@@ -68,6 +73,11 @@
         <div class="form-group">
             <label for="terms_conditions">Terms & Conditions</label>
             <textarea class="form-control" id="terms_conditions" name="terms_conditions" rows="4">{{ $settings['terms_conditions'] ?? '' }}</textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="footer_text">Footer Text</label>
+            <textarea class="form-control" id="footer_text" name="footer_text" rows="4">{{ $settings['footer_text'] ?? '' }}</textarea>
         </div>
 
         <div class="form-group">
