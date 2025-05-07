@@ -8,6 +8,7 @@ use App\Http\Controllers\userdetailscontroler;
 use App\Http\controllers\PriceController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\SystemSettingController;
+use App\Http\Controllers\HomeController;
 use App\Services\SiteSettingService;
 
 
@@ -28,7 +29,7 @@ Route::get('/', function () {
 });
 
 //auth
-Route::view('/home', 'frontend.index')->name('home');
+Route::get('/home', [HomeController::class,'index'])->name('home');
 Route::view('/login', 'frontend.auth.login')->name('frontend.login');
 Route::view('/signup', 'frontend.auth.signup')->name('frontend.signup');
 Route::post('/data', [UserController::class, 'signup'])->name('login.submit');
@@ -49,6 +50,7 @@ Route::post('/category/store', [CategoryController::class, 'store'])->name('cate
 Route::get('/category/delete/{id}', [CategoryController::class, 'delete'])->name('category.delete');
 Route::get('/category/edit/{id}', [CategoryController::class, 'edit'])->name('category.edit');
 Route::post('/category/update/{id}', [CategoryController::class, 'update'])->name('category.update');
+Route::get('/category/detail/{id}', [CategoryController::class, 'categoryDetails'])->name('category.detail');
 
 //for product
 Route::get('/product', [ProductController::class, 'index'])->name('product.index');

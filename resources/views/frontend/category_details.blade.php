@@ -1,33 +1,36 @@
 <!doctype html>
 <html lang="en">
+
+
+<!-- Mirrored from demo-egenslab.b-cdn.net/html/serve/preview/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 28 Mar 2025 02:36:41 GMT -->
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Household</title>
-    <link rel="icon" href="{{ asset('frontend/assets/images/faviconS.png')}}" type="image/gif" sizes="20x20">
+    <title>SERVE - On Demand Services HTML Template</title>
+    <link rel="icon" href="{{ asset('assets/images/faviconS.png')}}" type="image/gif" sizes="20x20">
 
     <!-- Bootstrap CSS -->
-    <link href="{{ asset('frontend/assets/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('assets/css/bootstrap.min.css')}}" rel="stylesheet">
     <!-- Bootstrap icons CSS -->
-    <link href="{{ asset('frontend/assets/css/bootstrap-icons.css')}}" rel="stylesheet">
+    <link href="{{ asset('assets/css/bootstrap-icons.css')}}" rel="stylesheet">
     <!-- Fontawesome all CSS -->
-    <link href="{{ asset('frontend/assets/css/all.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('assets/css/all.min.css')}}" rel="stylesheet">
     <!-- Fontawesome CSS -->
-    <link href="{{ asset('frontend/assets/css/fontawesome.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('assets/css/fontawesome.min.css')}}" rel="stylesheet">
     <!-- Swiper slider CSS -->
-    <link rel="stylesheet" href="{{ asset('frontend/assets/css/swiper-bundle.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/css/swiper-bundle.min.css')}}">
     <!-- slick-slide -->
-    <link rel="stylesheet" href="{{ asset('frontend/assets/css/slick-theme.css')}}">
-    <link rel="stylesheet" href="{{ asset('frontend/assets/css/slick.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/css/slick-theme.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/css/slick.css')}}">
     <!-- Nice select CSS -->
-    <link rel="stylesheet" href="{{ asset('frontend/assets/css/nice-select.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/css/nice-select.css')}}">
     <!-- Magnific-popup CSS -->
-    <link rel="stylesheet" href="{{ asset('frontend/assets/css/magnific-popup.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css')}}">
     <!-- Animate CSS -->
-    <link rel="stylesheet" href="{{ asset('frontend/assets/css/animate.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/css/animate.min.css')}}">
     <!--  Style CSS  -->
-    <link rel="stylesheet" href="{{ asset('frontend/assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css')}}">
     <!-- Title -->
 </head>
 
@@ -55,26 +58,26 @@
 
     <!-- Start header section -->
     <header class="header-1 sticky_top">
-        <!-- <div class="header-logo">
-            <a href="index-2.html"><img src="{{ asset('frontend/assets/images/logo.svg')}}" alt=""></a>
-        </div> -->
+        <div class="header-logo">
+            <a href="index-2.html"><img src="{{ asset('assets/images/logo.svg')}}" alt=""></a>
+        </div>
         <div class="main-menu">
             <nav class="main-nav">
                 <div class="mobile-menu-logo">
-                    <a href="index-2.html"><img src="{{ asset('frontend/assets/images/logo.svg')}}" alt=""></a>
+                    <a href="index-2.html"><img src="{{ asset('assets/images/logo.svg')}}" alt=""></a>
                     <div class="remove">
                         <i class="bi bi-plus-lg"></i>
-                   </div>
+                    </div>
                 </div>
                 <ul>
                     <li class="has-child active">
                         <a href="index-2.html">Home</a>
-                        <!-- <i class="bi bi-chevron-down"></i>
+                        <i class="bi bi-chevron-down"></i>
                         <ul class="sub-menu">
                             <li><a href="index-2.html">Home 01</a></li>
                             <li><a href="index2.html">Home 02</a></li>
                             <li><a href="index3.html">Home 03</a></li>
-                        </ul> -->
+                        </ul>
                     </li>
                     <li><a href="about.html">About Us</a></li>
                     <li class="has-child">
@@ -85,7 +88,7 @@
                             <li><a href="service-details.html">Service Details</a></li>
                         </ul>
                     </li>
-                    <!-- <li class="has-child">
+                    <li class="has-child">
                         <a href="blog.html">Blogs</a>
                         <i class="bi bi-chevron-down"></i>
                         <ul class="sub-menu">
@@ -94,34 +97,29 @@
                             <li><a href="blog-standard.html">Blog Standard</a></li>
                             <li><a href="blog-details.html">Blog Details</a></li>
                         </ul>
-                    </li> -->
+                    </li>
                     <li class="has-child">
                         <a href="#">Pages</a>
                         <i class="bi bi-chevron-down"></i>
                         <ul class="sub-menu">
-                            <li><a href="{{ route('frontend.login') }}">Login</a></li>
-                            <li><a href="{{ route('frontend.signup') }}">Sign Up</a></li>
-                            <!-- <li><a href="error.html">Error 404</a></li>
+                            <li><a href="login.html">Login</a></li>
+                            <li><a href="sign-up.html">Sign Up</a></li>
+                            <li><a href="error.html">Error 404</a></li>
                             <li><a href="faq.html">FAQs</a></li>
-                            <li><a href="account.html">My Account</a></li> -->
+                            <li><a href="account.html">My Account</a></li>
                         </ul>
                     </li>
                     <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="{{ route('login.submit')}}" onclick="confirmLogout()">Logout</a></li>
-
-                    @if(auth()->check())
-                    <li>Hello, {{ auth()->user()->first_name}}</li>
-                    @endif
                 </ul>
-                <!-- <div class="my-account">
+                <div class="my-account">
                     <a href="account.html">My Account</a>
-                </div> -->
+                </div>
             </nav>
         </div>
-        <!-- <div class="header-right">
+        <div class="header-right">
             <div class="phone">
                 <div class="icon">
-                    <img src="assets/images/icons/phone.svg" alt="">
+                    <img src="{{ asset('assets/images/icons/phone.svg')}}" alt="">
                 </div>
                 <div class="phn-info">
                     <span>Call Us Now</span>
@@ -141,7 +139,7 @@
                     <span class="cross-bottom"></span>
                 </a>
             </div>
-        </div> -->
+        </div>
     </header>
     <!-- End header section -->
 
@@ -150,13 +148,15 @@
         <div class="container-fluid">
             <div class="hero-wrapper">
                 <div class="hero-content wow animate fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
-                    <span>Wellcome Our {{ $globalSettings->get('name') }}</span>
-                    <h1>{{ $globalSettings->get('hero_text')}}</h1>
-                    <p>{{ $globalSettings->get('agency_description')}}</p>
+                    <span>Wellcome Our Service Sale</span>
+                    <h1>Nonstop Services Life Better.</h1>
+                    <p>Aenean fermentum sapien ac aliquet gravida. Fusce a ipsum metus. answerala and
+                        Suspendisse potenti. Nullam ac lorem ex. Ut feugiat maximus ante, vel gravida exel
+                        volutpat at.</p>
                     <div class="find-service">
                         <div class="location-search">
-                            <!-- <div class="location-btn">
-                                <i><img src="assets/images/icons/location.svg" alt=""></i>
+                            <div class="location-btn">
+                                <i><img src="{{ asset('assets/images/icons/location.svg')}}" alt=""></i>
                                 <select class="loc-select">
                                     <option selected="">Dhaka</option>
                                     <option value="barisal">Barisal</option>
@@ -165,7 +165,7 @@
                                     <option value="barisal">Sylhet</option>
                                     <option value="khulna">Rajshahi</option>
                                 </select>
-                            </div> -->
+                            </div>
                             <div class="location-form">
                                 <form action="#" method="post">
                                     <input type="text" name="location" placeholder="Find Your Services Here">
@@ -176,24 +176,22 @@
                         <div class="suggest">
                             <span>Suggest For You:</span>
                             <ul class="suggest-list">
-                                
-                            @forelse( $relatedCategories as $related )
-                            <li><a href="#"> {{ucwords( $related ->name ?? '')}} </a></li>
-                            @empty
-
-                            @endforelse
+                                <li><a href="service.html">Beauty & Salon</a></li>
+                                <li><a href="service.html">Shifting</a></li>
+                                <li><a href="service.html">AC Repair</a></li>
+                                <li><a href="service.html">WallPainting</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="hero-banner wow animate fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
-                    <img src="{{ asset('frontend/assets/images/home-1/hero-section-right-img.png')}}" alt="" class="banner">
+                    <img src="{{ asset('assets/images/home-1/hero-section-right-img.png')}}" alt="" class="banner">
                 </div>
             </div>
         </div>
-        <!-- <div class="scroll-down">
+        <div class="scroll-down">
             <a href="#category">Scroll Down<span><i class="bi bi-arrow-right"></i></span></a>
-        </div> -->
+        </div>
     </section>
     <!-- End hero-area section -->
 
@@ -205,45 +203,92 @@
                     <div class="sec-title layout-1 wow animate fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
                         <div class="title-left">
                             <span>Category</span>
-                            <h2>{{ $globalSettings->get('category')}}</h2>
+                            <h2>See Our All Creative Services</h2>
                         </div>
-                        <!-- <div class="title-right">
+                        <div class="title-right">
                             <strong>Category</strong>
                             <div class="slider-navigations">
                                 <div class="swiper-button-prev-c"><i class="bi bi-arrow-left"></i></div>
                                 <div class="swiper-button-next-c"><i class="bi bi-arrow-right"></i></div>
-                            </div> -->
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="swiper creative-service-slider">
                 <div class="swiper-wrapper">
-                    @forelse($categories as $category)
                     <div class="swiper-slide">
                         <div class="creative-service wow animate fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
                             <div class="thumb">
-                            <div class="card" style="width: 12rem;">
-                                <img src="{{ asset('uploads/' . $category->image) }}" class="card-img-top" alt="Category Image" style="height: 100px; width: 100px; object-fit: cover; margin: auto; padding-top: 10px;">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title">{{ $category->name }}</h5>
-                                    <p class="card-text">{{ $category->description }}</p>
-                                    <!-- Add buttons or links if needed -->
-                                    <a href="{{ route('category.detail', $category->id)}}" class="btn btn-primary btn-sm">View</a>
-                                </div>
-                            </div>
-                                <!-- <div class="cre-service-inner">
+                                <img src="{{ asset('assets/images/cre-service/cre-service-1.jpg')}}" alt="">
+                                <div class="cre-service-inner">
                                     <strong>100</strong>
                                     <span>Items</span>
-                                </div> -->
+                                </div>
                             </div>
-                            <h6><a href="{{ route('category.detail', $category->id)}}">{{ $category->name ?? ''}}</a></h6>
+                            <h6><a href="service-details.html">House Sift</a></h6>
                         </div>
                     </div>
-                    @empty
-
-                    @endforelse
-                
+                    <div class="swiper-slide">
+                        <div class="creative-service wow animate fadeInDown" data-wow-delay="300ms" data-wow-duration="1500ms">
+                            <div class="thumb">
+                                <img src="{{ asset('assets/images/cre-service/cre-service-2.jpg')}}" alt="">
+                                <div class="cre-service-inner">
+                                    <strong>80</strong>
+                                    <span>Items</span>
+                                </div>
+                            </div>
+                            <h6><a href="service-details.html">Driver</a></h6>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="creative-service wow animate fadeInDown" data-wow-delay="400ms" data-wow-duration="1500ms">
+                            <div class="thumb">
+                                <img src="{{ asset('assets/images/cre-service/cre-service-3.jpg')}}" alt="">
+                                <div class="cre-service-inner">
+                                    <strong>200+</strong>
+                                    <span>Items</span>
+                                </div>
+                            </div>
+                            <h6><a href="service-details.html">Security</a></h6>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="creative-service wow animate fadeInDown" data-wow-delay="500ms" data-wow-duration="1500ms">
+                            <div class="thumb">
+                                <img src="{{ asset('assets/images/cre-service/cre-service-4.jpg')}}" alt="">
+                                <div class="cre-service-inner">
+                                    <strong>50</strong>
+                                    <span>Items</span>
+                                </div>
+                            </div>
+                            <h6><a href="service-details.html">Gadgect Repaire</a></h6>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="creative-service wow animate fadeInDown" data-wow-delay="600ms" data-wow-duration="1500ms">
+                            <div class="thumb">
+                                <img src="{{ asset('assets/images/cre-service/cre-service-5.jpg')}}" alt="">
+                                <div class="cre-service-inner">
+                                    <strong>75</strong>
+                                    <span>Items</span>
+                                </div>
+                            </div>
+                            <h6><a href="service-details.html">Car & Care</a></h6>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="creative-service wow animate fadeInDown" data-wow-delay="700ms" data-wow-duration="1500ms">
+                            <div class="thumb">
+                                <img src="{{ asset('assets/images/cre-service/cre-service-6.jpg')}}" alt="">
+                                <div class="cre-service-inner">
+                                    <strong>85</strong>
+                                    <span>Items</span>
+                                </div>
+                            </div>
+                            <h6><a href="service-details.html">Home Clean</a></h6>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -251,7 +296,7 @@
     <!-- End creative-services section -->
 
     <!-- Start popular-services section -->
-    <!-- <section class="popular-services sec-m-top">
+    <section class="popular-services sec-m-top">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -271,7 +316,7 @@
                 <div class="col-md-6 col-lg-4 wow animate fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
                     <div class="single-service">
                         <div class="thumb">
-                            <a href="service-details.html"><img src="assets/images/services/service-1.jpg" alt=""></a>
+                            <a href="service-details.html"><img src="{{ asset('assets/images/services/service-1.jpg')}}" alt=""></a>
                             <div class="tag">
                                 <a href="service.html">Saloon</a>
                             </div>
@@ -279,7 +324,7 @@
                         <div class="single-inner">
                             <div class="author-info">
                                 <div class="author-thumb">
-                                    <img src="assets/images/services/service-author-1.png" alt="">
+                                    <img src="{{ asset('assets/images/services/service-author-1.png')}}" alt="">
                                 </div>
                                 <div class="author-content">
                                     <span>Egens Lab</span>
@@ -306,7 +351,7 @@
                 <div class="col-md-6 col-lg-4 wow animate fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
                     <div class="single-service">
                         <div class="thumb">
-                            <a href="service-details.html"><img src="assets/images/services/service-2.jpg" alt=""></a>
+                            <a href="service-details.html"><img src="{{ asset('assets/images/services/service-2.jpg')}}" alt=""></a>
                             <div class="tag">
                                 <a href="service.html">Cleaning</a>
                             </div>
@@ -314,7 +359,7 @@
                         <div class="single-inner">
                             <div class="author-info">
                                 <div class="author-thumb">
-                                    <img src="assets/images/services/service-author-2.png" alt="">
+                                    <img src="{{ asset('assets/images/services/service-author-2.png')}}" alt="">
                                 </div>
                                 <div class="author-content">
                                     <span>finibus</span>
@@ -341,7 +386,7 @@
                 <div class="col-md-6 col-lg-4 wow animate fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
                     <div class="single-service">
                         <div class="thumb">
-                            <a href="service-details.html"><img src="assets/images/services/service-3.jpg" alt=""></a>
+                            <a href="service-details.html"><img src="{{ asset('assets/images/services/service-3.jpg')}}" alt=""></a>
                             <div class="tag">
                                 <a href="service.html">Ac Repair</a>
                             </div>
@@ -349,7 +394,7 @@
                         <div class="single-inner">
                             <div class="author-info">
                                 <div class="author-thumb">
-                                    <img src="assets/images/services/service-author-3.png" alt="">
+                                    <img src="{{ asset('assets/images/services/service-author-3.png')}}" alt="">
                                 </div>
                                 <div class="author-content">
                                     <span>Creasoft</span>
@@ -375,11 +420,11 @@
                 </div>
             </div>
         </div>
-    </section> -->
+    </section>
     <!-- End popular-services section -->
 
     <!-- Start home-services section -->
-    <!-- <section class="home-services sec-m">
+    <section class="home-services sec-m">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -399,7 +444,7 @@
                 <div class="col-md-6 col-lg-4 wow animate fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
                     <div class="single-service">
                         <div class="thumb">
-                            <a href="service-details.html"><img src="assets/images/services/service-4.jpg" alt=""></a>
+                            <a href="service-details.html"><img src="{{ asset('assets/images/services/service-4.jpg')}}" alt=""></a>
                             <div class="tag">
                                 <a href="service.html">Spa & Beuty</a>
                             </div>
@@ -407,7 +452,7 @@
                         <div class="single-inner">
                             <div class="author-info">
                                 <div class="author-thumb">
-                                    <img src="assets/images/services/service-author-4.png" alt="">
+                                    <img src="{{ asset('assets/images/services/service-author-4.png')}}" alt="">
                                 </div>
                                 <div class="author-content">
                                     <span>Egens Lab</span>
@@ -434,7 +479,7 @@
                 <div class="col-md-6 col-lg-4 wow animate fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
                     <div class="single-service">
                         <div class="thumb">
-                            <a href="service-details.html"><img src="assets/images/services/service-5.jpg" alt=""></a>
+                            <a href="service-details.html"><img src="{{ asset('assets/images/services/service-5.jpg')}}" alt=""></a>
                             <div class="tag">
                                 <a href="service.html">House Sift</a>
                             </div>
@@ -442,7 +487,7 @@
                         <div class="single-inner">
                             <div class="author-info">
                                 <div class="author-thumb">
-                                    <img src="assets/images/services/service-author-5.png" alt="">
+                                    <img src="{{ asset('assets/images/services/service-author-5.png')}}" alt="">
                                 </div>
                                 <div class="author-content">
                                     <span>finibus</span>
@@ -469,7 +514,7 @@
                 <div class="col-md-6 col-lg-4 wow animate fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
                     <div class="single-service">
                         <div class="thumb">
-                            <a href="service-details.html"><img src="assets/images/services/service-6.jpg" alt=""></a>
+                            <a href="service-details.html"><img src="{{ asset('assets/images/services/service-6.jpg')}}" alt=""></a>
                             <div class="tag">
                                 <a href="service.html">Electrician</a>
                             </div>
@@ -477,7 +522,7 @@
                         <div class="single-inner">
                             <div class="author-info">
                                 <div class="author-thumb">
-                                    <img src="assets/images/services/service-author-6.png" alt="">
+                                    <img src="{{ asset('assets/images/services/service-author-6.png')}}" alt="">
                                 </div>
                                 <div class="author-content">
                                     <span>Creasoft</span>
@@ -503,11 +548,11 @@
                 </div>
             </div>
         </div>
-    </section> -->
+    </section>
     <!-- End home-services section -->
 
     <!-- Start features-shop section -->
-    <!-- <section class="features-shop">
+    <section class="features-shop">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -528,7 +573,7 @@
                     <div class="swiper-slide">
                         <div class="single-shop wow animate fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
                             <div class="shop-thumb">
-                                <img src="assets/images/shop/shop-1.png" alt="">
+                                <img src="{{ asset('assets/images/shop/shop-1.png')}}" alt="">
                             </div>
                             <div class="shop-inner">
                                 <span>Cleaning</span>
@@ -553,7 +598,7 @@
                     <div class="swiper-slide">
                         <div class="single-shop wow animate fadeInDown" data-wow-delay="400ms" data-wow-duration="1500ms">
                             <div class="shop-thumb">
-                                <img src="assets/images/shop/shop-2.png" alt="">
+                                <img src="{{ asset('assets/images/shop/shop-2.png')}}" alt="">
                             </div>
                             <div class="shop-inner">
                                 <span>Plumbing</span>
@@ -578,7 +623,7 @@
                     <div class="swiper-slide">
                         <div class="single-shop wow animate fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
                             <div class="shop-thumb">
-                                <img src="assets/images/shop/shop-3.png" alt="">
+                                <img src="{{ asset('assets/images/shop/shop-3.png')}}" alt="">
                             </div>
                             <div class="shop-inner">
                                 <span>Security</span>
@@ -603,7 +648,7 @@
                     <div class="swiper-slide">
                         <div class="single-shop wow animate fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
                             <div class="shop-thumb">
-                                <img src="assets/images/shop/shop-4.png" alt="">
+                                <img src="{{ asset('assets/images/shop/shop-4.png')}}" alt="">
                             </div>
                             <div class="shop-inner">
                                 <span>Gadgect</span>
@@ -629,11 +674,11 @@
                 <div class="swiper-pagination"></div>
             </div>
         </div>
-    </section> -->
+    </section>
     <!-- End features-shop section -->
 
     <!-- Start offer-services section -->
-    <!-- <section class="offer-services sec-m-top">
+    <section class="offer-services sec-m-top">
         <div class="container">
             <div class="row">
                 <div class="col-12 wow animate fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
@@ -653,7 +698,7 @@
                 <div class="col-md-6 col-lg-4 wow animate fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
                     <div class="single-service">
                         <div class="thumb">
-                            <a href="service-details.html"><img src="assets/images/services/service-7.jpg" alt=""></a>
+                            <a href="service-details.html"><img src="{{ asset('assets/images/services/service-7.jpg')}}" alt=""></a>
                             <div class="tag">
                                 <a href="service.html">45% OFF</a>
                             </div>
@@ -664,7 +709,7 @@
                                     <a href="account.html"><i class="bi bi-suit-heart"></i></a>
                                 </div>
                                 <div class="author-thumb">
-                                    <img src="assets/images/services/service-author-7.png" alt="">
+                                    <img src="{{ asset('assets/images/services/service-author-7.png')}}" alt="">
                                 </div>
                                 <div class="author-content">
                                     <span>Egens Lab</span>
@@ -690,7 +735,7 @@
                 <div class="col-md-6 col-lg-4 wow animate fadeInLeft" data-wow-delay="400ms" data-wow-duration="1500ms">
                     <div class="single-service">
                         <div class="thumb">
-                            <a href="service-details.html"><img src="assets/images/services/service-8.jpg" alt=""></a>
+                            <a href="service-details.html"><img src="{{ asset('assets/images/services/service-8.jpg')}}" alt=""></a>
                             <div class="tag">
                                 <a href="service.html">60% OFF</a>
                             </div>
@@ -701,7 +746,7 @@
                                     <a href="account.html"><i class="bi bi-suit-heart"></i></a>
                                 </div>
                                 <div class="author-thumb">
-                                    <img src="assets/images/services/service-author-8.png" alt="">
+                                    <img src="{{ asset('assets/images/services/service-author-8.png')}}" alt="">
                                 </div>
                                 <div class="author-content">
                                     <span>Finibus</span>
@@ -738,7 +783,7 @@
                                     <a href="account.html"><i class="bi bi-suit-heart"></i></a>
                                 </div>
                                 <div class="author-thumb">
-                                    <img src="assets/images/services/service-author-9.png" alt="">
+                                    <img src="{{ asset('assets/images/services/service-author-9.png')}}" alt="">
                                 </div>
                                 <div class="author-content">
                                     <span>Creasoft</span>
@@ -763,7 +808,7 @@
                 </div>
             </div>
         </div>
-    </section> -->
+    </section>
     <!-- End offer-services section -->
 
     <!-- Start why-choose section -->
@@ -776,11 +821,10 @@
                             <div class="title-left">
                                 <span>Trust Agency</span>
                                 <h2>Best Offered Services</h2>
-                                <p>{{ $globalSettings->get('trust_agency')}}</p>
+                                <p>Aenean fermentum sapien ac aliquet gravida. Fusce a ipsum metus. tolad answerala tomadunali Aliquam viverra sagittis felis.</p>
                             </div>
                         </div>
-                        <!-- mark -->
-                        <!-- <div class="accordion" id="accordionExample">
+                        <div class="accordion" id="accordionExample">
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingOne">
                                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -817,10 +861,10 @@
                                     </div>
                                 </div>
                             </div>
-                        </div> -->                
+                        </div>
                     </div>
                 </div>
-                <!-- <div class="col-lBeaut">
+                <div class="col-lg-6">
                     <div class="why-choose-right">
                         <h2 class=" wow animate fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">Why Choose Us</h2>
                         <div class="our-archive">
@@ -841,17 +885,17 @@
                                 <h5>Friendly Shop</h5>
                             </div>
                         </div>
-                        <img src="assets/images/why-choose-dot-shape.png" alt="" class="shape-dot">
-                        <img src="assets/images/why-choose-shape.png" alt="" class="shape-triangle">
+                        <img src="{{ asset('assets/images/why-choose-dot-shape.png')}}" alt="" class="shape-dot">
+                        <img src="{{ asset('assets/images/why-choose-shape.png')}}" alt="" class="shape-triangle">
                     </div>
-                </div> -->
+                </div>
             </div>
         </div>
     </section>
     <!-- End why-choose section -->
 
     <!-- Start testimonial section -->
-    <!-- <section class="testimonial">
+    <section class="testimonial">
         <div class="container">
             <div class="row">
                 <div class="col-12 wow animate fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
@@ -890,7 +934,7 @@
                             </div>
                             <div class="reviewer">
                                 <div class="thumb">
-                                    <img src="assets/images/testimonial/testimonial-2.jpg" alt="">
+                                    <img src="{{ asset('assets/images/testimonial/testimonial-2.jpg')}}" alt="">
                                     <i class="fas fa-quote-left"></i>
                                 </div>
                                 <div class="reviewer-info">
@@ -908,11 +952,11 @@
                 </div>
             </div>
         </div>
-    </section> -->
+    </section>
     <!-- End testimonial section -->
 
     <!-- Start how-it-works section -->
-    <!-- <section class="how-it-works sec-m-top">
+    <section class="how-it-works sec-m-top">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -959,11 +1003,11 @@
                 </div>
             </div>
         </div>
-    </section> -->
+    </section>
     <!-- End how-it-works section -->
 
     <!-- Start lastest-blog section -->
-    <!-- <section class="lastest-blog sec-m">
+    <section class="lastest-blog sec-m">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -982,8 +1026,8 @@
             <div class="row g-4">
                 <div class="col-md-6 col-lg-4 wow animate fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
                     <div class="single-blog">
-                  copy      <div class="blog-thumb">
-                            <a href="blog-details.html"><img src="assets/images/blog/blog-1.jpg" alt=""></a>
+                        <div class="blog-thumb">
+                            <a href="blog-details.html"><img src="{{ asset('assets/images/blog/blog-1.jpg')}}" alt=""></a>
                         </div>
                         <div class="blog-inner">
                             <span><i class="bi bi-calendar-week"></i> 6 April, 2022</span>
@@ -995,7 +1039,7 @@
                 <div class="col-md-6 col-lg-4 wow animate fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
                     <div class="single-blog">
                         <div class="blog-thumb">
-                            <a href="blog-details.html"><img src="assets/images/blog/blog-2.jpg" alt=""></a>
+                            <a href="blog-details.html"><img src="{{ asset('assets/images/blog/blog-2.jpg')}}" alt=""></a>
                         </div>
                         <div class="blog-inner">
                             <span><i class="bi bi-calendar-week"></i> 6 April, 2022</span>
@@ -1007,7 +1051,7 @@
                 <div class="col-md-6 col-lg-4 wow animate fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
                     <div class="single-blog">
                         <div class="blog-thumb">
-                            <a href="blog-details.html"><img src="assets/images/blog/blog-3.jpg" alt=""></a>
+                            <a href="blog-details.html"><img src="{{ asset('assets/images/blog/blog-3.jpg')}}" alt=""></a>
                         </div>
                         <div class="blog-inner">
                             <span><i class="bi bi-calendar-week"></i> 6 April, 2022</span>
@@ -1018,35 +1062,134 @@
                 </div>
             </div>
         </div>
-    </section> -->
+    </section>
     <!-- End lastest-blog section -->
 
     <!-- Start footer section -->
-   @include('frontend.includes.footer')
+    <footer class="footer-1">
+        <img src="assets/images/footer-left-shape.png" alt="" class="line-shape">
+        <div class="container">
+            <div class="footer-top">
+                <div class="row gy-5">
+                    <div class="col-md-6 col-lg-5">
+                        <div class="footer-widget with-logo">
+                            <div class="footer-logo">
+                                <a href="index-2.html"><img src="assets/images/footer-logo.svg" alt=""></a>
+                            </div>
+                            <p>Aenean fermentum sapien acena gravida. Fusce a ipsum metuslai. Suspendisse oi potenti.</p>
+                            <div class="request-btn">
+                                <a href="contact.html">Request a Service</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-2">
+                        <div class="footer-widget">
+                            <h4>Explore On</h4>
+                            <ul class="footer-menu">
+                                <li><a href="index-2.html">Home</a></li>
+                                <li><a href="blog.html">Blog Grid</a></li>
+                                <li><a href="#">Help & Support</a></li>
+                                <li><a href="service-details.html">Services Details</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms of use</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-2">
+                        <div class="footer-widget">
+                            <h4>Categories</h4>
+                            <ul class="footer-menu">
+                                <li><a href="service.html">Electronics</a></li>
+                                <li><a href="service.html">Driver Service</a></li>
+                                <li><a href="service.html">Electric & Plumbing</a></li>
+                                <li><a href="service.html">Gadgets Repair</a></li>
+                                <li><a href="service.html">Security Service</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="footer-widget">
+                            <h4>Contacts</h4>
+                            <div class="information">
+                                <div class="info">
+                                    <div class="icon">
+                                        <i class="fas fa-phone-alt"></i>
+                                    </div>
+                                    <div class="desc">
+                                        <a href="tel:01761111456">+880 176 1111 456</a>
+                                        <a href="tel:01761111555">+880 176 1111 555</a>
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <div class="icon">
+                                        <i class="far fa-envelope"></i>
+                                    </div>
+                                    <div class="desc">
+                                        <a href="https://demo-egenslab.b-cdn.net/cdn-cgi/l/email-protection#d2bbbcb4bd92b7aab3bfa2beb7fcb1bdbf"><span class="__cf_email__" data-cfemail="f49d9a929bb4918c9599849891da979b99">[email&#160;protected]</span></a>
+                                        <a href="https://demo-egenslab.b-cdn.net/cdn-cgi/l/email-protection#1871767e77586b6d6868776a6c367b7775"><span class="__cf_email__" data-cfemail="721b1c141d32010702021d00065c111d1f">[email&#160;protected]</span></a>
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <div class="icon">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div class="desc">
+                                        <p>168/170, Avenue 01, Mirpur DOHS, Bangladesh</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="copy-right">
+                            <span>Copyright 2022 Serve | Design By <a href="https://www.egenslab.com/">Egens Lab</a></span>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="footer-social-media">
+                            <ul>
+                                <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="https://www.pinterest.com/"><i class="fab fa-pinterest-p"></i></a></li>
+                                <li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
     <!-- End footer section -->
 
     <!--  Main jQuery  -->
-    <script data-cfasync="false" src="{{ asset('cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js')}}"></script><script src="{{ asset('frontend/assets/js/jquery-3.6.0.min.js')}}"></script>
+    <script data-cfasync="false" src="{{ asset('../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js')}}"></script><script src="{{ asset('assets/js/jquery-3.6.0.min.js')}}"></script>
     <!-- Popper and Bootstrap JS -->
-    <script src="{{ asset('frontend/assets/js/popper.min.js')}}"></script>
-    <script src="{{ asset('frontend/assets/js/bootstrap.min.js')}}"></script>
+    <script src="{{ asset('assets/js/popper.min.js')}}"></script>
+    <script src="{{ asset('assets/js/bootstrap.min.js')}}"></script>
     <!-- Swiper slider JS -->
-    <script src="{{ asset('frontend/assets/js/swiper-bundle.min.js')}}"></script>
+    <script src="{{ asset('assets/js/swiper-bundle.min.js')}}"></script>
     <!-- Slick slider JS -->
-    <script src="{{ asset('frontend/assets/js/slick.js')}}"></script>
+    <script src="{{ asset('assets/js/slick.js')}}"></script>
     <!-- Nice select JS -->
-    <script src="{{ asset('frontend/assets/js/jquery.nice-select.min.js')}}"></script>
+    <script src="{{ asset('assets/js/jquery.nice-select.min.js')}}"></script>
     <!-- Waypoints JS -->
-    <script src="{{ asset('frontend/assets/js/waypoints.min.js')}}"></script>
+    <script src="{{ asset('assets/js/waypoints.min.js')}}"></script>
     <!-- Counterup JS -->
-    <script src="{{ asset('frontend/assets/js/jquery.counterup.min.js')}}"></script>
+    <script src="{{ asset('assets/js/jquery.counterup.min.js')}}"></script>
     <!-- Magnific-popup  JS -->
-    <script src="{{ asset('frontend/assets/js/jquery.magnific-popup.min.js')}}"></script>
+    <script src="{{ asset('assets/js/jquery.magnific-popup.min.js')}}"></script>
     <!-- Wow JS -->
-        <script src="{{ asset('frontend/assets/js/wow.min.js')}}"></script>
-    <script src="{{asset('frontend/assets/js/anime.min.js')}}"></script>
+        <script src="{{ asset('assets/js/wow.min.js')}}"></script>
+    <script src="{{ asset('assets/js/anime.min.js')}}"></script>
     <!-- Custom JS -->
-    <script src="{{ asset('frontend/assets/js/custom.js')}}"></script>
+    <script src="{{ asset('assets/js/custom.js')}}"></script>
 
 </body>
+
+
+<!-- Mirrored from demo-egenslab.b-cdn.net/html/serve/preview/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 28 Mar 2025 02:36:41 GMT -->
 </html>
