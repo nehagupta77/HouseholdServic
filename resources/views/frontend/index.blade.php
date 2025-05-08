@@ -226,10 +226,10 @@
                             <div class="card" style="width: 12rem;">
                                 <img src="{{ asset('uploads/' . $category->image) }}" class="card-img-top" alt="Category Image" style="height: 100px; width: 100px; object-fit: cover; margin: auto; padding-top: 10px;">
                                 <div class="card-body text-center">
-                                    <h5 class="card-title">{{ $category->name }}</h5>
-                                    <p class="card-text">{{ $category->description }}</p>
+                                    <h5 class="card-title" style="height:50px; overflow:hidden">{{ $category->name }}</h5>
+                                    <p class="card-text" style="height:50px; overflow:hidden">{{ $category->description }}</p>
                                     <!-- Add buttons or links if needed -->
-                                    <a href="{{ route('category.detail', $category->id)}}" class="btn btn-primary btn-sm">View</a>
+                                    <!-- <a href="{{ route('category.detail', $category->id)}}" class="btn btn-primary btn-sm">View</a> -->
                                 </div>
                             </div>
                                 <!-- <div class="cre-service-inner">
