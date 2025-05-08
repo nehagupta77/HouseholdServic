@@ -54,52 +54,7 @@
 
 
     <!-- Start header section -->
-    <header class="header-1 sticky_top">
-        
-        <div class="main-menu">
-            <nav class="main-nav">
-                <div class="mobile-menu-logo">
-                    <a href="index-2.html"><img src="{{ asset('frontend/assets/images/logo.svg')}}" alt=""></a>
-                    <div class="remove">
-                        <i class="bi bi-plus-lg"></i>
-                   </div>
-                </div>
-                <ul>
-                    <li class="has-child active">
-                        <a href="index-2.html">Home</a>
-                       
-                    </li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li class="has-child">
-                        <a href="service.html">Services</a>
-                        <i class="bi bi-chevron-down"></i>
-                        <ul class="sub-menu">
-                            <li><a href="service.html">Services</a></li>
-                            <li><a href="service-details.html">Service Details</a></li>
-                        </ul>
-                    </li>
-                   
-                    <li class="has-child">
-                        <a href="#">Pages</a>
-                        <i class="bi bi-chevron-down"></i>
-                        <ul class="sub-menu">
-                            <li><a href="{{ route('frontend.login') }}">Login</a></li>
-                            <li><a href="{{ route('frontend.signup') }}">Sign Up</a></li>
-                            
-                        </ul>
-                    </li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="{{ route('login.submit')}}" onclick="confirmLogout()">Logout</a></li>
-
-                    @if(auth()->check())
-                    <li>Hello, {{ auth()->user()->first_name}}</li>
-                    @endif
-                </ul>
-                
-            </nav>
-        </div>
-       
-    </header>
+    @include('frontend.includes.header')
     <!-- End header section -->
 
     <!-- Start hero-area section -->
@@ -114,8 +69,8 @@
                         <div class="location-search">
                            
                             <div class="location-form">
-                                <form action="#" method="post">
-                                    <input type="text" name="location" placeholder="Find Your Services Here">
+                                <form action="{{ route('category.search')}}" method="get">
+                                    <input type="text" name="search" placeholder="Find Your Services Here">
                                     <button type="submit"><i class="bi bi-search"></i></button>
                                 </form>
                             </div>
