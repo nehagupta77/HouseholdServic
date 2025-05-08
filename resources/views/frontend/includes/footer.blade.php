@@ -18,12 +18,7 @@
                         <div class="footer-widget">
                             <h4>Explore On</h4>
                             <ul class="footer-menu">
-                                <li><a href="index-2.html">Home</a></li>
-                                <li><a href="blog.html">Blog Grid</a></li>
-                                <li><a href="#">Help & Support</a></li>
-                                <li><a href="service-details.html">Services Details</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Terms of use</a></li>
+                                <li><a href="{{ route('home')}}">Home</a></li>
                             </ul>
                         </div>
                     </div>
