@@ -142,7 +142,8 @@ class CategoryController extends Controller
             return redirect()->back();
         }
 
-        $products = product::where('category_id',$id)->get();
+        $products = product::with('category','price')->where('category_id',$id)->get();
+        // dd($products);
         if($products){
             return view('frontend.category_details',compact('products'));
         }
