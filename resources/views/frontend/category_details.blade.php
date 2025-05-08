@@ -2,7 +2,7 @@
 <html lang="en">
 
 
-<!-- Mirrored from demo-egenslab.b-cdn.net/html/serve/preview/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 28 Mar 2025 02:36:41 GMT -->
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -11,26 +11,26 @@
     <link rel="icon" href="{{ asset('assets/images/faviconS.png')}}" type="image/gif" sizes="20x20">
 
     <!-- Bootstrap CSS -->
-    <link href="{{ asset('assets/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('frontend/assets/css/bootstrap.min.css')}}" rel="stylesheet">
     <!-- Bootstrap icons CSS -->
-    <link href="{{ asset('assets/css/bootstrap-icons.css')}}" rel="stylesheet">
+    <link href="{{ asset('frontend/assets/css/bootstrap-icons.css')}}" rel="stylesheet">
     <!-- Fontawesome all CSS -->
-    <link href="{{ asset('assets/css/all.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('frontend/assets/css/all.min.css')}}" rel="stylesheet">
     <!-- Fontawesome CSS -->
-    <link href="{{ asset('assets/css/fontawesome.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('frontend/assets/css/fontawesome.min.css')}}" rel="stylesheet">
     <!-- Swiper slider CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/swiper-bundle.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/swiper-bundle.min.css')}}">
     <!-- slick-slide -->
-    <link rel="stylesheet" href="{{ asset('assets/css/slick-theme.css')}}">
-    <link rel="stylesheet" href="{{ asset('assets/css/slick.css')}}">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/slick-theme.css')}}">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/slick.css')}}">
     <!-- Nice select CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/nice-select.css')}}">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/nice-select.css')}}">
     <!-- Magnific-popup CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css')}}">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/magnific-popup.css')}}">
     <!-- Animate CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/animate.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/animate.min.css')}}">
     <!--  Style CSS  -->
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/style.css')}}">
     <!-- Title -->
 </head>
 
@@ -144,7 +144,7 @@
     <!-- End header section -->
 
     <!-- Start hero-area section -->
-    <section class="hero-area">
+    <!-- <section class="hero-area">
         <div class="container-fluid">
             <div class="hero-wrapper">
                 <div class="hero-content wow animate fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
@@ -192,11 +192,11 @@
         <div class="scroll-down">
             <a href="#category">Scroll Down<span><i class="bi bi-arrow-right"></i></span></a>
         </div>
-    </section>
+    </section> -->
     <!-- End hero-area section -->
 
     <!-- Start creative-services section -->
-    <section id="category" class="creative-services sec-p-top">
+    <!-- <section id="category" class="creative-services sec-p-top">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -292,11 +292,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- End creative-services section -->
 
     <!-- Start popular-services section -->
-    <section class="popular-services sec-m-top">
+    <!-- <section class="popular-services sec-m-top">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -420,11 +420,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- End popular-services section -->
 
     <!-- Start home-services section -->
-    <section class="home-services sec-m">
+    <!-- <section class="home-services sec-m">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -548,11 +548,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- End home-services section -->
 
     <!-- Start features-shop section -->
-    <section class="features-shop">
+    <!-- <section class="features-shop">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -674,7 +674,7 @@
                 <div class="swiper-pagination"></div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- End features-shop section -->
 
     <!-- Start offer-services section -->
@@ -698,7 +698,7 @@
                 <div class="col-md-6 col-lg-4 wow animate fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
                     <div class="single-service">
                         <div class="thumb">
-                            <a href="service-details.html"><img src="{{ asset('assets/images/services/service-7.jpg')}}" alt=""></a>
+                            <a href="service-details.html"><img src="{{ asset('frontend/assets/images/services/service-7.jpg')}}" alt=""></a>
                             <div class="tag">
                                 <a href="service.html">45% OFF</a>
                             </div>
@@ -709,7 +709,7 @@
                                     <a href="account.html"><i class="bi bi-suit-heart"></i></a>
                                 </div>
                                 <div class="author-thumb">
-                                    <img src="{{ asset('assets/images/services/service-author-7.png')}}" alt="">
+                                    <img src="{{ asset('frontend/assets/images/services/service-author-7.png')}}" alt="">
                                 </div>
                                 <div class="author-content">
                                     <span>Egens Lab</span>
@@ -735,7 +735,7 @@
                 <div class="col-md-6 col-lg-4 wow animate fadeInLeft" data-wow-delay="400ms" data-wow-duration="1500ms">
                     <div class="single-service">
                         <div class="thumb">
-                            <a href="service-details.html"><img src="{{ asset('assets/images/services/service-8.jpg')}}" alt=""></a>
+                            <a href="service-details.html"><img src="{{ asset('frontend/assets/images/services/service-8.jpg')}}" alt=""></a>
                             <div class="tag">
                                 <a href="service.html">60% OFF</a>
                             </div>
@@ -746,7 +746,7 @@
                                     <a href="account.html"><i class="bi bi-suit-heart"></i></a>
                                 </div>
                                 <div class="author-thumb">
-                                    <img src="{{ asset('assets/images/services/service-author-8.png')}}" alt="">
+                                    <img src="{{ asset('frontend/assets/images/services/service-author-8.png')}}" alt="">
                                 </div>
                                 <div class="author-content">
                                     <span>Finibus</span>
@@ -772,7 +772,7 @@
                 <div class="col-md-6 col-lg-4 wow animate fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
                     <div class="single-service">
                         <div class="thumb">
-                            <a href="service-details.html"><img src="assets/images/services/service-9.jpg" alt=""></a>
+                            <a href="service-details.html"><img src="{{ asset('frontend/assets/images/services/service-9.jpg')}}" alt=""></a>
                             <div class="tag">
                                 <a href="service.html">50% OFF</a>
                             </div>
@@ -783,7 +783,7 @@
                                     <a href="account.html"><i class="bi bi-suit-heart"></i></a>
                                 </div>
                                 <div class="author-thumb">
-                                    <img src="{{ asset('assets/images/services/service-author-9.png')}}" alt="">
+                                    <img src="{{ asset('frontend/assets/images/services/service-author-9.png')}}" alt="">
                                 </div>
                                 <div class="author-content">
                                     <span>Creasoft</span>
@@ -1166,27 +1166,27 @@
     <!-- End footer section -->
 
     <!--  Main jQuery  -->
-    <script data-cfasync="false" src="{{ asset('../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js')}}"></script><script src="{{ asset('assets/js/jquery-3.6.0.min.js')}}"></script>
+    <script data-cfasync="false" src="{{ asset('frontend/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js')}}"></script><script src="{{ asset('frontend/assets/js/jquery-3.6.0.min.js')}}"></script>
     <!-- Popper and Bootstrap JS -->
-    <script src="{{ asset('assets/js/popper.min.js')}}"></script>
-    <script src="{{ asset('assets/js/bootstrap.min.js')}}"></script>
+    <script src="{{ asset('frontend/assets/js/popper.min.js')}}"></script>
+    <script src="{{ asset('frontend/assets/js/bootstrap.min.js')}}"></script>
     <!-- Swiper slider JS -->
-    <script src="{{ asset('assets/js/swiper-bundle.min.js')}}"></script>
+    <script src="{{ asset('frontend/assets/js/swiper-bundle.min.js')}}"></script>
     <!-- Slick slider JS -->
-    <script src="{{ asset('assets/js/slick.js')}}"></script>
+    <script src="{{ asset('frontend/assets/js/slick.js')}}"></script>
     <!-- Nice select JS -->
-    <script src="{{ asset('assets/js/jquery.nice-select.min.js')}}"></script>
+    <script src="{{ asset('frontend/assets/js/jquery.nice-select.min.js')}}"></script>
     <!-- Waypoints JS -->
-    <script src="{{ asset('assets/js/waypoints.min.js')}}"></script>
+    <script src="{{ asset('frontend/assets/js/waypoints.min.js')}}"></script>
     <!-- Counterup JS -->
-    <script src="{{ asset('assets/js/jquery.counterup.min.js')}}"></script>
+    <script src="{{ asset('frontend/assets/js/jquery.counterup.min.js')}}"></script>
     <!-- Magnific-popup  JS -->
-    <script src="{{ asset('assets/js/jquery.magnific-popup.min.js')}}"></script>
+    <script src="{{ asset('frontend/assets/js/jquery.magnific-popup.min.js')}}"></script>
     <!-- Wow JS -->
-        <script src="{{ asset('assets/js/wow.min.js')}}"></script>
-    <script src="{{ asset('assets/js/anime.min.js')}}"></script>
+        <script src="{{ asset('frontend/assets/js/wow.min.js')}}"></script>
+    <script src="{{ asset('frontend/assets/js/anime.min.js')}}"></script>
     <!-- Custom JS -->
-    <script src="{{ asset('assets/js/custom.js')}}"></script>
+    <script src="{{ asset('frontend/assets/js/custom.js')}}"></script>
 
 </body>
 
