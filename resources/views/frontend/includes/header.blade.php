@@ -10,7 +10,7 @@
                 </div>
                 <ul>
                     <li class="has-child active">
-                        <a href="index-2.html">Home</a>
+                        <a href="{{ route('home')}}">Home</a>
                        
                     </li>
                     <li><a href="about.html">About Us</a></li>

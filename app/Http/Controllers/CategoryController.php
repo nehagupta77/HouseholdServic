@@ -144,10 +144,11 @@ class CategoryController extends Controller
             return redirect()->back();
         }
 
-        $products = product::with('category','price')->where('category_id',$id)->get();
+        $data['products'] = product::with('category','price')->where('category_id',$id)->get();
+        $data['categories'] = Category::where('status', 1)->get();
         // dd($products);
-        if($products){
-            return view('frontend.category_details',compact('products'));
+        if($data['products']){
+            return view('frontend.category_details',$data);
         }
 
         return redirect()->back();
