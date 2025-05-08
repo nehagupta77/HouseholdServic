@@ -89,7 +89,7 @@
                         </ul>
                     </li>
                     <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="{{ route('login.submit')}}" class="bg-danger" onclick="confirmLogout()">Logout</a></li>
+                    <li><a href="{{ route('login.submit')}}" onclick="confirmLogout()">Logout</a></li>
 
                     @if(auth()->check())
                     <li>Hello, {{ auth()->user()->first_name}}</li>
@@ -123,11 +123,12 @@
                         <div class="suggest">
                             <span>Suggest For You:</span>
                             <ul class="suggest-list">
-                                <li><a href="service.html"></a></li>
-                                <li><a href="service.html"></a></li>
-                                <li><a href="service.html"></a></li>
-                                <li><a href="service.html"></a></li>
-                                <li><a href="service.html"></a></li>
+                                
+                            @forelse( $relatedCategories as $related )
+                            <li><a href="#"> {{ucwords( $related ->name ?? '')}} </a></li>
+                            @empty
+
+                            @endforelse
                             </ul>
                         </div>
                     </div>
@@ -158,60 +159,31 @@
             </div>
             <div class="swiper creative-service-slider">
                 <div class="swiper-wrapper">
+                    @forelse($categories as $category)
                     <div class="swiper-slide">
                         <div class="creative-service wow animate fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
                             <div class="thumb">
-                                <img src="{{ asset('frontend/assets/images/cre-service/cre-service-1.jpg')}}" alt="">
-                              
+                            <div class="card" style="width: 12rem;">
+                                <img src="{{ asset('uploads/' . $category->image) }}" class="card-img-top" alt="Category Image" style="height: 100px; width: 100px; object-fit: cover; margin: auto; padding-top: 10px;">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">{{ $category->name }}</h5>
+                                    <p class="card-text">{{ $category->description }}</p>
+                                    <!-- Add buttons or links if needed -->
+                                    <a href="{{ route('category.detail', $category->id)}}" class="btn btn-primary btn-sm">View</a>
+                                </div>
                             </div>
-                            <h6><a href="service-details.html">House Sift</a></h6>
+                                <!-- <div class="cre-service-inner">
+                                    <strong>100</strong>
+                                    <span>Items</span>
+                                </div> -->
+                            </div>
+                            <h6><a href="{{ route('category.detail', $category->id)}}">{{ $category->name ?? ''}}</a></h6>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="creative-service wow animate fadeInDown" data-wow-delay="300ms" data-wow-duration="1500ms">
-                            <div class="thumb">
-                                <img src="{{asset('frontend/assets/images/cre-service/cre-service-2.jpg')}}" alt="">
-                              
-                            </div>
-                            <h6><a href="service-details.html">Driver</a></h6>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="creative-service wow animate fadeInDown" data-wow-delay="400ms" data-wow-duration="1500ms">
-                            <div class="thumb">
-                                <img src="{{ asset('frontend/assets/images/cre-service/cre-service-3.jpg')}}" alt="">
-                                
-                            </div>
-                            <h6><a href="service-details.html">Security</a></h6>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="creative-service wow animate fadeInDown" data-wow-delay="500ms" data-wow-duration="1500ms">
-                            <div class="thumb">
-                                <img src="{{ asset('frontend/assets/images/cre-service/cre-service-4.jpg')}}" alt="">
-                                
-                            </div>
-                            <h6><a href="service-details.html">Gadgect Repaire</a></h6>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="creative-service wow animate fadeInDown" data-wow-delay="600ms" data-wow-duration="1500ms">
-                            <div class="thumb">
-                                <img src="{{ asset('frontend/assets/images/cre-service/cre-service-5.jpg')}}" alt="">
-                               
-                            </div>
-                            <h6><a href="service-details.html">Car & Care</a></h6>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="creative-service wow animate fadeInDown" data-wow-delay="700ms" data-wow-duration="1500ms">
-                            <div class="thumb">
-                                <img src="{{ asset('frontend/assets/images/cre-service/cre-service-6.jpg')}}" alt="">
-                               
-                            </div>
-                            <h6><a href="service-details.html">Home Clean</a></h6>
-                        </div>
-                    </div>
+                    @empty
+
+                    @endforelse
+                
                 </div>
             </div>
         </div>
@@ -228,13 +200,37 @@
                             <div class="title-left">
                                 <span>Trust Agency</span>
                                 <h2>Best Offered Services</h2>
-                                <p>We offer top-quality services for a comfortable home and workplace. From repairs to cleaning, our skilled team ensures efficiency, reliability, and excellence. Trust us for hassle-free solutions!</p>
+                                <p>{{ $globalSettings->get('trust_agency')}}</p>
                             </div>
                         </div>
                                      
                     </div>
                 </div>
-                
+                <!-- <div class="col-lBeaut">
+                    <div class="why-choose-right">
+                        <h2 class=" wow animate fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">Why Choose Us</h2>
+                        <div class="our-archive">
+                            <div class="single-archive wow animate fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">
+                                <span class="counter">5,000</span><span>+</span>
+                                <h5>Service Providers</h5>
+                            </div>
+                            <div class="single-archive wow animate fadeInUp" data-wow-delay="500ms" data-wow-duration="1500ms">
+                                <span class="counter">15,000</span><span>+</span>
+                                <h5>Order Served</h5>
+                            </div>
+                            <div class="single-archive wow animate fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
+                                <span class="counter">2,000</span><span>+</span>
+                                <h5>5 Star Received</h5>
+                            </div>
+                            <div class="single-archive wow animate fadeInUp" data-wow-delay="700ms" data-wow-duration="1500ms">
+                                <span class="counter">1,800</span><span>+</span>
+                                <h5>Friendly Shop</h5>
+                            </div>
+                        </div>
+                        <img src="assets/images/why-choose-dot-shape.png" alt="" class="shape-dot">
+                        <img src="assets/images/why-choose-shape.png" alt="" class="shape-triangle">
+                    </div>
+                </div> -->
             </div>
         </div>
     </section>
@@ -245,103 +241,7 @@
     
 
     <!-- Start footer section -->
-    <footer class="footer-1">
-        <img src="assets/images/footer-left-shape.png" alt="" class="line-shape">
-        <div class="container">
-            <div class="footer-top">
-                <div class="row gy-5">
-                    <div class="col-md-6 col-lg-5">
-                        <div class="footer-widget with-logo">
-                            <div class="footer-logo">
-                                <a href="index-2.html"><img src="assets/images/footer-logo.svg" alt=""></a>
-                            </div>
-                            <p>{{ $globalSettings->get('footer_text')}}</p>
-                            <div class="request-btn">
-                                <a href="contact.html">Request a Service</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-2">
-                        <div class="footer-widget">
-                            <h4>Explore On</h4>
-                            <ul class="footer-menu">
-                                <li><a href="index-2.html">Home</a></li>
-                                <li><a href="blog.html">Blog Grid</a></li>
-                                <li><a href="#">Help & Support</a></li>
-                                <li><a href="service-details.html">Services Details</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Terms of use</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-2">
-                        <div class="footer-widget">
-                            <h4>Categories</h4>
-                            <ul class="footer-menu">
-                                <li><a href="service.html">Electronics</a></li>
-                                <li><a href="service.html">Driver Service</a></li>
-                                <li><a href="service.html">Electric & Plumbing</a></li>
-                                <li><a href="service.html">Gadgets Repair</a></li>
-                                <li><a href="service.html">Security Service</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="footer-widget">
-                            <h4>Contacts</h4>
-                            <div class="information">
-                                <div class="info">
-                                    <div class="icon">
-                                        <i class="fas fa-phone-alt"></i>
-                                    </div>
-                                    <div class="desc">
-                                        <a href="tel:01761111456">{{ $globalSettings->get('phone')}}</a>
-                                        <a href="tel:01761111555">{{ $globalSettings->get('phone')}}</a>
-                                    </div>
-                                </div>
-                                <div class="info">
-                                    <div class="icon">
-                                        <i class="far fa-envelope"></i>
-                                    </div>
-                                    <div class="desc">
-                                        <a href="https://demo-egenslab.b-cdn.net/cdn-cgi/l/email-protection#88e1e6eee7c8edf0e9e5f8e4eda6ebe7e5"><span class="__cf_email__" data-cfemail="6b02050d042b0e130a061b070e45080406">{{ $globalSettings->get('email')}}</span></a>
-                                        <a href="https://demo-egenslab.b-cdn.net/cdn-cgi/l/email-protection#7a13141c153a090f0a0a15080e54191517"><span class="__cf_email__" data-cfemail="88e1e6eee7c8fbfdf8f8e7fafca6ebe7e5">{{ $globalSettings->get('email')}}</span></a>
-                                    </div>
-                                </div>
-                                <div class="info">
-                                    <div class="icon">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                    </div>
-                                    <div class="desc">
-                                        <p>{{ $globalSettings->get('address')}}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div class="copy-right">
-                            <span>{{ $globalSettings->get('copyright')}} | Design By <a href="https://www.egenslab.com/">Egens Lab</a></span>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="footer-social-media">
-                            <ul>
-                                <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="https://www.pinterest.com/"><i class="fab fa-pinterest-p"></i></a></li>
-                                <li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+   @include('frontend.includes.footer')
     <!-- End footer section -->
 
     <!--  Main jQuery  -->

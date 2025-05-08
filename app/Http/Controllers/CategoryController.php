@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\product;
 
 class CategoryController extends Controller
 {
@@ -135,4 +136,19 @@ class CategoryController extends Controller
       return redirect()->route('category.index');  
 
     }
+
+    public function categoryDetails($id){
+        if(!$id){
+            return redirect()->back();
+        }
+
+        $products = product::where('category_id',$id)->get();
+        if($products){
+            return view('frontend.category_details',compact('products'));
+        }
+
+        return redirect()->back();
+    }
+
+
 }

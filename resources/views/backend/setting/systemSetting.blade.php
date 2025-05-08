@@ -51,6 +51,11 @@
         </div>
 
         <div class="form-group">
+            <label for="trust_agency">Trust Agency</label>
+            <textarea class="form-control" id="trust_agency" name="trust_agency" rows="3">{{ $settings['trust_agency'] ?? '' }}</textarea>
+        </div>
+
+        <div class="form-group">
             <label for="phone">Phone Number</label>
             <input type="tel" class="form-control" id="phone" name="phone" value="{{ $settings['phone'] ?? '' }}">
         </div>
