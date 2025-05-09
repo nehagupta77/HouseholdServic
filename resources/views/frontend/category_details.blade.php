@@ -64,7 +64,7 @@
         <div class="main-menu">
             <nav class="main-nav">
                 <div class="mobile-menu-logo">
-                    <a href="index-2.html"><img src="{{ asset('assets/images/logo.svg')}}" alt=""></a>
+                    <a href="index-2.html"><img src="{{ asset('frontend/assets/images/logo.svg')}}" alt=""></a>
                     <div class="remove">
                         <i class="bi bi-plus-lg"></i>
                     </div>
@@ -72,13 +72,13 @@
                 <ul>
                     <li class="has-child active">
                         <a href="index-2.html">Home</a>
-                        <i class="bi bi-chevron-down"></i>
+                        <!-- <i class="bi bi-chevron-down"></i>
                         <ul class="sub-menu">
                             <li><a href="index-2.html">Home 01</a></li>
                             <li><a href="index2.html">Home 02</a></li>
                             <li><a href="index3.html">Home 03</a></li>
                         </ul>
-                    </li>
+                    </li> -->
                     <li><a href="about.html">About Us</a></li>
                     <li class="has-child">
                         <a href="service.html">Services</a>
@@ -88,7 +88,7 @@
                             <li><a href="service-details.html">Service Details</a></li>
                         </ul>
                     </li>
-                    <li class="has-child">
+                    <!-- <li class="has-child">
                         <a href="blog.html">Blogs</a>
                         <i class="bi bi-chevron-down"></i>
                         <ul class="sub-menu">
@@ -97,16 +97,16 @@
                             <li><a href="blog-standard.html">Blog Standard</a></li>
                             <li><a href="blog-details.html">Blog Details</a></li>
                         </ul>
-                    </li>
+                    </li> -->
                     <li class="has-child">
                         <a href="#">Pages</a>
                         <i class="bi bi-chevron-down"></i>
                         <ul class="sub-menu">
                             <li><a href="login.html">Login</a></li>
                             <li><a href="sign-up.html">Sign Up</a></li>
-                            <li><a href="error.html">Error 404</a></li>
+                            <!-- <li><a href="error.html">Error 404</a></li>
                             <li><a href="faq.html">FAQs</a></li>
-                            <li><a href="account.html">My Account</a></li>
+                            <li><a href="account.html">My Account</a></li> -->
                         </ul>
                     </li>
                     <li><a href="contact.html">Contact Us</a></li>
@@ -119,7 +119,7 @@
         <div class="header-right">
             <div class="phone">
                 <div class="icon">
-                    <img src="{{ asset('assets/images/icons/phone.svg')}}" alt="">
+                    <img src="{{ asset('frontend/assets/images/icons/phone.svg')}}" alt="">
                 </div>
                 <div class="phn-info">
                     <span>Call Us Now</span>
