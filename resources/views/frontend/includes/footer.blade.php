@@ -18,12 +18,7 @@
                         <div class="footer-widget">
                             <h4>Explore On</h4>
                             <ul class="footer-menu">
-                                <li><a href="index-2.html">Home</a></li>
-                                <li><a href="blog.html">Blog Grid</a></li>
-                                <li><a href="#">Help & Support</a></li>
-                                <li><a href="service-details.html">Services Details</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Terms of use</a></li>
+                                <li><a href="{{ route('home')}}">Home</a></li>
                             </ul>
                         </div>
                     </div>
@@ -31,11 +26,12 @@
                         <div class="footer-widget">
                             <h4>Categories</h4>
                             <ul class="footer-menu">
-                                <li><a href="service.html">Electronics</a></li>
-                                <li><a href="service.html">Driver Service</a></li>
-                                <li><a href="service.html">Electric & Plumbing</a></li>
-                                <li><a href="service.html">Gadgets Repair</a></li>
-                                <li><a href="service.html">Security Service</a></li>
+                               @forelse($categories as $category)
+                                <li><a href="{{ route('category.detail', $category->id)}}">{{ $category->name}}</a></li>
+                                @empty
+                                <li><a href="#">No categories found</a></li>
+                                @endforelse
+                                
                             </ul>
                         </div>
                     </div>

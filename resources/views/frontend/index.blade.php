@@ -32,74 +32,9 @@
 </head>
 
 <body>
-    <!--Start preloader area -->
-    <div class="egns-preloader">
-        <div class="container">
-            <div class="row d-flex justify-content-center">
-                <div class="col-6">
-                    <div class="circle-border">
-                        <div class="moving-circle"></div>
-                        <div class="moving-circle"></div>
-                        <div class="moving-circle"></div>
-                        <svg width="180px" height="150px" viewBox="0 0 187.3 93.7" preserveAspectRatio="xMidYMid meet">
-                            <path stroke="#5BB543" id="outline" fill="none" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z" />
-                            <path id="outline-bg" opacity="0.05" fill="none" stroke="#959595" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z" />
-                        </svg>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--End preloader area  -->
-
-
+   
     <!-- Start header section -->
-    <header class="header-1 sticky_top">
-        
-        <div class="main-menu">
-            <nav class="main-nav">
-                <div class="mobile-menu-logo">
-                    <a href="index-2.html"><img src="{{ asset('frontend/assets/images/logo.svg')}}" alt=""></a>
-                    <div class="remove">
-                        <i class="bi bi-plus-lg"></i>
-                   </div>
-                </div>
-                <ul>
-                    <li class="has-child active">
-                        <a href="index-2.html">Home</a>
-                       
-                    </li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li class="has-child">
-                        <a href="service.html">Services</a>
-                        <i class="bi bi-chevron-down"></i>
-                        <ul class="sub-menu">
-                            <li><a href="service.html">Services</a></li>
-                            <li><a href="service-details.html">Service Details</a></li>
-                        </ul>
-                    </li>
-                   
-                    <li class="has-child">
-                        <a href="#">Pages</a>
-                        <i class="bi bi-chevron-down"></i>
-                        <ul class="sub-menu">
-                            <li><a href="{{ route('frontend.login') }}">Login</a></li>
-                            <li><a href="{{ route('frontend.signup') }}">Sign Up</a></li>
-                            
-                        </ul>
-                    </li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="{{ route('login.submit')}}" onclick="confirmLogout()">Logout</a></li>
-
-                    @if(auth()->check())
-                    <li>Hello, {{ auth()->user()->first_name}}</li>
-                    @endif
-                </ul>
-                
-            </nav>
-        </div>
-       
-    </header>
+    @include('frontend.includes.header')
     <!-- End header section -->
 
     <!-- Start hero-area section -->
@@ -114,8 +49,8 @@
                         <div class="location-search">
                            
                             <div class="location-form">
-                                <form action="#" method="post">
-                                    <input type="text" name="location" placeholder="Find Your Services Here">
+                                <form action="{{ route('category.search')}}" method="get">
+                                    <input type="text" name="search" placeholder="Find Your Services Here">
                                     <button type="submit"><i class="bi bi-search"></i></button>
                                 </form>
                             </div>
@@ -125,7 +60,7 @@
                             <ul class="suggest-list">
                                 
                             @forelse( $relatedCategories as $related )
-                            <li><a href="#"> {{ucwords( $related ->name ?? '')}} </a></li>
+                            <li><a href="{{ route('category.detail', $related->id) }}"> {{ucwords( $related ->name ?? '')}} </a></li>
                             @empty
 
                             @endforelse

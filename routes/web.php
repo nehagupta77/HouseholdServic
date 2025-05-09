@@ -23,13 +23,13 @@ use App\Services\SiteSettingService;
 |
 */
 
-Route::get('/', function () {
-    $settings = app(SiteSettingService::class);
-    return view('frontend.index')->with('globalSettings', $settings);
-});
+// Route::get('/', function () {
+//     $settings = app(SiteSettingService::class);
+//     return view('frontend.index')->with('globalSettings', $settings);
+// });
 
 //auth
-Route::get('/home', [HomeController::class,'index'])->name('home');
+Route::get('/', [HomeController::class,'index'])->name('home');
 Route::view('/login', 'frontend.auth.login')->name('frontend.login');
 Route::view('/signup', 'frontend.auth.signup')->name('frontend.signup');
 Route::post('/data', [UserController::class, 'signup'])->name('login.submit');
@@ -45,6 +45,7 @@ Route::get('/dashboard', function () {
 
 //for category
 Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
+Route::get('/category/search', [CategoryController::class, 'search'])->name('category.search');
 Route::get('/category/create', [CategoryController::class, 'create'])->name('category.create');
 Route::post('/category/store', [CategoryController::class, 'store'])->name('category.store');
 Route::get('/category/delete/{id}', [CategoryController::class, 'delete'])->name('category.delete');
