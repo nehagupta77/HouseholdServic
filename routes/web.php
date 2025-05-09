@@ -45,6 +45,7 @@ Route::get('/dashboard', function () {
 
 //for category
 Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
+Route::get('/category/search', [CategoryController::class, 'search'])->name('category.search');
 Route::get('/category/create', [CategoryController::class, 'create'])->name('category.create');
 Route::post('/category/store', [CategoryController::class, 'store'])->name('category.store');
 Route::get('/category/delete/{id}', [CategoryController::class, 'delete'])->name('category.delete');

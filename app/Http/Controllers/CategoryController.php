@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\product;
+use DB;
+use App\Services\SiteSettingService;
 
 class CategoryController extends Controller
 {
@@ -142,12 +144,28 @@ class CategoryController extends Controller
             return redirect()->back();
         }
 
-        $products = product::where('category_id',$id)->get();
-        if($products){
-            return view('frontend.category_details',compact('products'));
+        $data['products'] = product::with('category','price')->where('category_id',$id)->get();
+        $data['categories'] = Category::where('status', 1)->get();
+        // dd($products);
+        if($data['products']){
+            return view('frontend.category_details',$data);
         }
 
         return redirect()->back();
+    }
+
+    public function search(Request $request)
+    {
+       
+        $query = \DB::table('category');
+        if ($request->filled('search')) {
+            $search = $request->input('search');
+            $query->where('name', 'like', '%' . $search . '%');
+        }
+        $data['categories'] = $query->orderBy('name')->get();
+        $data['relatedCategories'] =  Category::where('status', 1)->inRandomOrder(5)->get();
+        $settings = app(SiteSettingService::class);
+        return view('frontend.index', $data)->with('globalSettings', $settings);;
     }
 
 

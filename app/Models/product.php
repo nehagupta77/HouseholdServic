@@ -21,7 +21,7 @@ class product extends Model
     //relationship with price
     public function price()
     {
-        return $this->belongsTo(Price::class);
+        return $this->hasOne(Price::class, 'product_id', 'id');
     }
 
     
