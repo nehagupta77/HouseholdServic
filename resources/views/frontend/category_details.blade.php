@@ -59,6 +59,7 @@
                 </div>
             </div>
             <div class="row g-4">
+                
                 @forelse($products as $product)
                 <div class="col-md-6 col-lg-4 wow animate fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
                     <div class="single-service">
