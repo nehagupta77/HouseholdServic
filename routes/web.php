@@ -60,6 +60,7 @@ Route::post('/product/store', [ProductController::class, 'store'])->name('produc
 Route::get('/product/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
 Route::post('/product/update/{id}', [ProductController::class, 'update'])->name('product.update');
 Route::get('/product/delete/{id}', [ProductController::class, 'delete'])->name('product.delete');
+Route::get('/product/detail/{id}', [productController::class, 'productDetails'])->name('product.detail');
 
 // userdetails
 Route::get('/userdetails', [userdetailscontroler::class, 'userdetail'])->name('userdetails.userdetail');

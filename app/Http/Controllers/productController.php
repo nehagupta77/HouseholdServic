@@ -145,4 +145,19 @@ class productController extends Controller
         return redirect()->back();
 
     }
+
+    public function productDetails($id){
+        if(!$id){
+            return redirect()->back();
+        }
+
+        $data['product'] = product::with('category','price')->find($id);
+        $data['categories'] = Category::where('status', 1)->get();
+
+        if($data['product']){
+            return view('frontend.service_detail',$data);
+        }
+
+        return redirect()->back();
+    }
 }

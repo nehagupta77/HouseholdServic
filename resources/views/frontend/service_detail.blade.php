@@ -2,149 +2,45 @@
 <html lang="en">
 
 
-<!-- Mirrored from demo-egenslab.b-cdn.net/html/serve/preview/service-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 28 Mar 2025 02:36:57 GMT -->
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SERVE - On Demand Services HTML Template</title>
-    <link rel="icon" href="assets/images/faviconS.png" type="image/gif" sizes="20x20">
+    <title>service_detail</title>
+    <link rel="icon" href="{{ asset('frontend/assets/images/faviconS.png')}}" type="image/gif" sizes="20x20">
 
     <!-- Bootstrap CSS -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('frontend/assets/css/bootstrap.min.css')}}" rel="stylesheet">
     <!-- Bootstrap icons CSS -->
-    <link href="assets/css/bootstrap-icons.css" rel="stylesheet">
+    <link href="{{ asset('frontend/assets/css/bootstrap-icons.css')}}" rel="stylesheet">
     <!-- Fontawesome all CSS -->
-    <link href="assets/css/all.min.css" rel="stylesheet">
+    <link href="{{ asset('frontend/assets/css/all.min.css')}}" rel="stylesheet">
     <!-- Fontawesome CSS -->
-    <link href="assets/css/fontawesome.min.css" rel="stylesheet">
+    <link href="{{ asset('frontend/assets/css/fontawesome.min.css')}}" rel="stylesheet">
     <!-- Swiper slider CSS -->
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/swiper-bundle.min.css')}}">
     <!-- slick-slide -->
-    <link rel="stylesheet" href="assets/css/slick-theme.css">
-    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/slick-theme.css')}}">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/slick.css')}}">
     <!-- Nice select CSS -->
-    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/nice-select.css')}}">
     <!-- Magnific-popup CSS -->
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/magnific-popup.css')}}">
     <!-- Animate CSS -->
-    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/animate.min.css')}}">
     <!--  Style CSS  -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/style.css')}}">
     <!-- Title -->
 </head>
 
 <body>
 
-    <!--Start preloader area -->
-    <div class="egns-preloader">
-        <div class="container">
-            <div class="row d-flex justify-content-center">
-                <div class="col-6">
-                    <div class="circle-border">
-                        <div class="moving-circle"></div>
-                        <div class="moving-circle"></div>
-                        <div class="moving-circle"></div>
-                        <svg width="180px" height="150px" viewBox="0 0 187.3 93.7" preserveAspectRatio="xMidYMid meet">
-                            <path stroke="#5BB543" id="outline" fill="none" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z" />
-                            <path id="outline-bg" opacity="0.05" fill="none" stroke="#959595" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z" />
-                        </svg>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--End preloader area  -->
-
     <!-- Start header section -->
-    <header class="header-2 sticky_top">
-        <div class="header-logo">
-            <a href="index-2.html"><img src="assets/images/home2/logo.svg" alt=""></a>
-        </div>
-        <div class="main-menu">
-            <nav class="main-nav">
-                <div class="mobile-menu-logo">
-                    <a href="index-2.html"><img src="assets/images/home2/logo.svg" alt=""></a>
-                    <div class="remove">
-                        <i class="bi bi-plus-lg"></i>
-                    </div>
-                </div>
-                <ul>
-                    <li class="has-child active">
-                        <a href="index-2.html">Home</a>
-                        <i class="bi bi-chevron-down"></i>
-                        <ul class="sub-menu">
-                            <li><a href="index-2.html">Home 01</a></li>
-                            <li><a href="index2.html">Home 02</a></li>
-                            <li><a href="index3.html">Home 03</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li class="has-child">
-                        <a href="service.html">Services</a>
-                        <i class="bi bi-chevron-down"></i>
-                        <ul class="sub-menu">
-                            <li><a href="service.html">Services</a></li>
-                            <li><a href="service-details.html">Service Details</a></li>
-                        </ul>
-                    </li>
-                    <li class="has-child">
-                        <a href="blog.html">Blogs</a>
-                        <i class="bi bi-chevron-down"></i>
-                        <ul class="sub-menu">
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="blog-sidebar.html">Blog Sidebar</a></li>
-                            <li><a href="blog-standard.html">Blog Standard</a></li>
-                            <li><a href="blog-details.html">Blog Details</a></li>
-                        </ul>
-                    </li>
-                    <li class="has-child">
-                        <a href="#">Pages</a>
-                        <i class="bi bi-chevron-down"></i>
-                        <ul class="sub-menu">
-                            <li><a href="login.html">Login</a></li>
-                            <li><a href="sign-up.html">Sign Up</a></li>
-                            <li><a href="error.html">Error 404</a></li>
-                            <li><a href="faq.html">FAQs</a></li>
-                            <li><a href="account.html">My Account</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-                <div class="my-account">
-                    <a href="account.html">My Account</a>
-                </div>
-            </nav>
-        </div>
-        <div class="header-right">
-            <div class="phone">
-                <div class="icon">
-                    <img src="assets/images/icons/phone.svg" alt="">
-                </div>
-                <div class="phn-info">
-                    <span>Call Us Now</span>
-                    <a href="tel:01701111000">+880 170 1111 000</a>
-                </div>
-            </div>
-            <div class="wishlist">
-                <a href="account.html"><i class="bi bi-suit-heart"></i></a>
-            </div>
-            <div class="account-btn">
-                <a href="account.html">My Account</a>
-            </div>
-            <div class="mobile-menu">
-                <a href="javascript:void(0)" class="cross-btn">
-                    <span class="cross-top"></span>
-                    <span class="cross-middle"></span>
-                    <span class="cross-bottom"></span>
-                </a>
-            </div>
-        </div>
-    </header>
+    @include('frontend.includes.header')
     <!-- End header section -->
 
     <!-- Start breadcrumbs section -->
-    <section class="breadcrumbs">
+    <!-- <section class="breadcrumbs">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -158,7 +54,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- End breadcrumbs section -->
 
     <!-- Start services-details-area section -->
@@ -168,9 +64,9 @@
                 <div class="col-lg-8">
                     <div class="service-details">
                         <div class="service-details-thumbnail">
-                            <img src="assets/images/services/service-details.jpg" alt="">
+                            <img src='{{ asset("uploads/$product->image")}}' alt="">
                         </div>
-                        <H2>Cleaning Package (Bedroom + Sofa + Furniture + Bathroom)</H2>
+                        <H2>{{}}</H2>
                         <div class="service-tabs wow animate fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
                             <ul class="nav nav-pills" id="pills-tab" role="tablist">
                                 <li class="nav-item" role="presentation">
@@ -182,9 +78,7 @@
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Client Review</button>
                                 </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="pills-faq-tab" data-bs-toggle="pill" data-bs-target="#pills-faq" type="button" role="tab" aria-controls="pills-faq" aria-selected="false">FAQ</button>
-                                </li>
+
                             </ul>
                             <div class="tab-content" id="pills-tabContent">
                                 <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
@@ -388,7 +282,7 @@
                         <div class="service-widget wow animate fadeInRight" data-wow-delay="400ms" data-wow-duration="1500ms">
                             <div class="about-seller">
                                 <div class="thumb">
-                                    <img src="assets/images/seller.png" alt="">
+                                    <img src="{{ asset('frontend/assets/images/seller.png')}}" alt="">
                                 </div>
                                 <h3>About Seller</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum molestie adipiscing fermentum lectus.</p>
