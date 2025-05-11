@@ -7,7 +7,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SERVE - On Demand Services HTML Template</title>
+    <title>Category_details</title>
     <link rel="icon" href="{{ asset('assets/images/faviconS.png')}}" type="image/gif" sizes="20x20">
 
     <!-- Bootstrap CSS -->
@@ -59,14 +59,14 @@
                 </div>
             </div>
             <div class="row g-4">
-                
+
                 @forelse($products as $product)
                 <div class="col-md-6 col-lg-4 wow animate fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
                     <div class="single-service">
                         <div class="thumb">
-                            <a href="service-details.html"><img src='{{ asset("uploads/$product->image")}}' alt=""></a>
+                            <a href="{{route('product.detail', $product->id)}}"><img src='{{ asset("uploads/$product->image")}}' alt=""></a>
                             <div class="tag">
-                                <a href="service.html">{{ $product->price->discount ? $product->price->discount.'% ' : ''}}OFF</a>
+                                <a href="{{route('product.detail', $product->id)}}">{{ $product->price->discount ? $product->price->discount.'% ' : ''}}OFF</a>
                             </div>
                         </div>
                         <div class="single-inner">
@@ -89,7 +89,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <h4><a href="service-details.html">{{ $product->description ?? ''}}</a></h4>
+                            <h4><a href="{{ route('product.detail',$product->id)}}">{{ $product->description ?? ''}}</a></h4>
                             <div class="started">
                                 <span>Started At : <strong><small>$</small>{{ $product->price->price ?? ''}}</strong></span>
                             </div>
