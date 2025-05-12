@@ -55,6 +55,11 @@ class UserController extends Controller
         if($user){
             if(Hash::check($request->password, $user->password)){
                 Auth::login($user);
+
+                session([
+                'user_id' => $user->id,
+                'is_authenticated' => true,
+            ]);
                 //return redirect()->route('dashboard');
             }else{
                 $request->session()->flash('failed', 'Please enter correct password');

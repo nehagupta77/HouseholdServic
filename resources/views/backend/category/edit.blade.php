@@ -33,8 +33,8 @@
 
         {{-- Description --}}
         <div class="form-group mb-3">
-            <label for="desc">Description:</label>
-            <input type="text" class="form-control" id="desc" name="description" value ='{{ $category ->description}}'>
+            <label for="tiny">Description:</label>
+            <textarea class="form-control" id="tiny" name="description" value ='{{ $category ->description}}'></textarea>
         </div>
 
         {{-- Status --}}

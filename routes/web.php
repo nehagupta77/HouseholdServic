@@ -10,7 +10,7 @@ use App\Http\Controllers\SettingController;
 use App\Http\Controllers\SystemSettingController;
 use App\Http\Controllers\HomeController;
 use App\Services\SiteSettingService;
-
+use App\Http\Controllers\bookingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,6 +60,7 @@ Route::post('/product/store', [ProductController::class, 'store'])->name('produc
 Route::get('/product/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
 Route::post('/product/update/{id}', [ProductController::class, 'update'])->name('product.update');
 Route::get('/product/delete/{id}', [ProductController::class, 'delete'])->name('product.delete');
+Route::get('/product/detail/{id}', [productController::class, 'productDetails'])->name('product.detail');
 
 // userdetails
 Route::get('/userdetails', [userdetailscontroler::class, 'userdetail'])->name('userdetails.userdetail');
@@ -81,3 +82,16 @@ Route::get('/pricing/delete/{id}', [PriceController::class, 'delete'])->name('pr
 //for Setting
 Route::get('/settings', [SettingController::class, 'system'])->name('setting.systemSetting');
 Route::post('/setting/store', [SystemSettingController::class, 'store'])->name('setting.systemSetting.store');
+
+// fro bookingservices
+Route::view('/booking','frontend.booking')->name('booking.index');
+Route::post('/booking-post',[bookingController::class,'store'])->name('booking.store');
+
+// for display bookin in aminpanel
+Route::get('/bookingdetails', [bookingController::class, 'bookingDetail'])->name('booking.bookingStatus');
+Route::get('booking/create', [bookingController::class, 'create'])->name('booking.create');
+Route::post('bookingdetails', [bookingController::class, 'store'])->name('booking.store');
+Route::get('bookingdetails/{id}/edit', [bookingController::class, 'edit'])->name('booking.editbooking');
+Route::put('bookingdtails/{id}', [bookingController::class, 'update'])->name('booking.update');
+Route::get('bookingdetails/{id}/delete', [bookingController::class, 'delete'])->name('booking.delete');
+

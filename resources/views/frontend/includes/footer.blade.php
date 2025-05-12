@@ -9,9 +9,9 @@
                                 <a href="index-2.html"><img src="assets/images/footer-logo.svg" alt=""></a>
                             </div>
                             <p>{{ $globalSettings->get('footer_text')}}</p>
-                            <div class="request-btn">
+                            <!-- <div class="request-btn">
                                 <a href="contact.html">Request a Service</a>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-2">
@@ -74,7 +74,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <div class="copy-right">
-                            <span>{{ $globalSettings->get('copyright')}} | Design By <a href="https://www.egenslab.com/">{{ $globalSettings->get('copyright')}}</a></span>
+                            <span>{{ $globalSettings->get('copyright')}}</a></span>
                         </div>
                     </div>
                     <div class="col-lg-6">
