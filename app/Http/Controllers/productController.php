@@ -152,6 +152,7 @@ class productController extends Controller
 
         $data['product'] = product::with('category','price')->find($id);
         $data['categories'] = Category::where('status', 1)->get();
+        $data['related_products'] = product::where('status', 1)->inRandomOrder()->get();
 
         if($data['product']){
             return view('frontend.service_detail',$data);

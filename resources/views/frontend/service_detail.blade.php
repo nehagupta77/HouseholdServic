@@ -260,12 +260,12 @@
                     <div class="service-sidebar">
                         <div class="service-widget wow animate fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
                             <div class="service-pack">
-                                <h4>Service Price <span><small>$</small>{{!! $product->price->price !!}}</span></h4>
+                                <h4>Service Price <span><small>$</small>{{ $product->price->price }}</span></h4>
                                 <div class="package">
                                     <h4>Our Package</h4>
                                     <ul class="package-list">
                                        <li class="description text-truncate" style="cursor: pointer;">{!! $product->description ?? '' !!}</li>
-                                        <a href="javascript:void(0);" class="read-more-btn">Read more</a>
+        
 
                                     </ul>
                                 </div>
@@ -319,12 +319,13 @@
             <div class="other-services">
                 <h3>Other Services</h3>
                 <div class="row g-4">
+                   @forelse($related_products as $related_product)
                     <div class="col-md-6 col-lg-4 wow animate fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
                         <div class="single-service layout-2">
                             <div class="thumb">
-                                <a href="service-details.html"><img src="assets/images/services/service-1.jpg" alt=""></a>
+                                <a href="{{ route('product.detail', $related_product->id) }}"><img src="{{ asset('assets/images/services/service-1.jpg')}}" alt=""></a>
                                 <div class="tag">
-                                    <a href="service.html">Saloon</a>
+                                    <a href="{{ route('product.detail', $related_product->id) }}">Saloon</a>
                                 </div>
                                 <div class="wish">
                                     <a href="account.html"><i class="bi bi-suit-heart"></i></a>
@@ -333,10 +334,10 @@
                             <div class="single-inner">
                                 <div class="author-info">
                                     <div class="author-thumb">
-                                        <img src="assets/images/services/service-author-1.png" alt="">
+                                        <img src='{{ asset("uploads/$related_product->image") }}' alt="">
                                     </div>
                                     <div class="author-content">
-                                        <span>Egens Lab</span>
+                                        <span>{{ $related_product ->name ?? ''}}</span>
                                         <div class="ratting">
                                             <ul class="stars">
                                                 <li><i class="fas fa-star"></i></li>
@@ -349,90 +350,19 @@
                                         </div>
                                     </div>
                                 </div>
-                                <h4><a href="service-details.html">Sed elit massa, maximus quisen fermentum auctor.</a></h4>
+                                <h4><a href="service-details.html">{!!  $related_product->description !!}</a></h4>
                                 <div class="started">
-                                    <a href="service-details.html">View Details<span><i class="bi bi-arrow-right"></i></span></a>
-                                    <span><small>$</small>250</span>
+                                    <a href="{{ route('product.detail', $related_product->id) }}">View Details<span><i class="bi bi-arrow-right"></i></span></a>
+                                    <span><small>$</small>{{ $product->price->price ?? ''}}</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 wow animate fadeInLeft" data-wow-delay="400ms" data-wow-duration="1500ms">
-                        <div class="single-service layout-2">
-                            <div class="thumb">
-                                <a href="service-details.html"><img src="assets/images/services/service-2.jpg" alt=""></a>
-                                <div class="tag">
-                                    <a href="service.html">Cleaning</a>
-                                </div>
-                                <div class="wish">
-                                    <a href="account.html"><i class="bi bi-suit-heart"></i></a>
-                                </div>
-                            </div>
-                            <div class="single-inner">
-                                <div class="author-info">
-                                    <div class="author-thumb">
-                                        <img src="assets/images/services/service-author-2.png" alt="">
-                                    </div>
-                                    <div class="author-content">
-                                        <span>Finibus</span>
-                                        <div class="ratting">
-                                            <ul class="stars">
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
-                                            </ul>
-                                            <strong>(5/5)</strong>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h4><a href="service-details.html">Cleaning & Renovation Services By Our Expert Cleaner.</a></h4>
-                                <div class="started">
-                                    <a href="service-details.html">View Details<span><i class="bi bi-arrow-right"></i></span></a>
-                                    <span><small>$</small>250</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow animate fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
-                        <div class="single-service layout-2">
-                            <div class="thumb">
-                                <a href="service-details.html"><img src="assets/images/services/service-3.jpg" alt=""></a>
-                                <div class="tag">
-                                    <a href="service.html">Ac Repair</a>
-                                </div>
-                                <div class="wish">
-                                    <a href="account.html"><i class="bi bi-suit-heart"></i></a>
-                                </div>
-                            </div>
-                            <div class="single-inner">
-                                <div class="author-info">
-                                    <div class="author-thumb">
-                                        <img src="assets/images/services/service-author-3.png" alt="">
-                                    </div>
-                                    <div class="author-content">
-                                        <span>Creasoft</span>
-                                        <div class="ratting">
-                                            <ul class="stars">
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
-                                                <li><i class="fas fa-star"></i></li>
-                                            </ul>
-                                            <strong>(5/5)</strong>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h4><a href="service-details.html">Nullam dui nulla, lacinia ac masi varius sed tempor ac.</a></h4>
-                                <div class="started">
-                                    <a href="service-details.html">View Details<span><i class="bi bi-arrow-right"></i></span></a>
-                                    <span><small>$</small>250</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+                   @empty
+
+                   @endforelse
+                    
                 </div>
             </div>
         </div>
