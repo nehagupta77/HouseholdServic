@@ -122,6 +122,12 @@
         <span>System Setting</span></a>
 </li>
 
+<li class="nav-item">
+    <a class="nav-link" href="{{ route('booking.bookingStatus')}}">
+        <i class="fas fa-cogs"></i>
+        <span>booking status</span></a>
+</li>
+
 
 <!-- Divider -->
 <hr class="sidebar-divider d-none d-md-block">

@@ -87,5 +87,11 @@ Route::post('/setting/store', [SystemSettingController::class, 'store'])->name('
 Route::view('/booking','frontend.booking')->name('booking.index');
 Route::post('/booking-post',[bookingController::class,'store'])->name('booking.store');
 
+// for display bookin in aminpanel
+Route::get('/bookingdetails', [bookingController::class, 'bookingDetail'])->name('booking.bookingStatus');
+Route::get('booking/create', [bookingController::class, 'create'])->name('booking.create');
+Route::post('bookingdetails', [bookingController::class, 'store'])->name('booking.store');
+Route::get('bookingdetails/{id}/edit', [bookingController::class, 'edit'])->name('booking.editbooking');
+Route::put('bookingdtails/{id}', [bookingController::class, 'update'])->name('booking.update');
+Route::get('bookingdetails/{id}/delete', [bookingController::class, 'delete'])->name('booking.delete');
 
-// Route::view('/signup', 'frontend.auth.signup')->name('frontend.signup');
