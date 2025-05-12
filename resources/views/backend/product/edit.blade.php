@@ -24,13 +24,13 @@
         <input type="text" class="form-control" id="name" name="name" value="{{ $product->name }}" required>
     </div>
     <div class="form-group">
-        <label for="description">Description</label>
-        <textarea class="form-control" id="description" name="description">{{ $product->description }}</textarea>
+        <label for="tiny">Description</label>
+        <textarea class="form-control" id="tiny" name="description">{{ $product->description }}</textarea>
     </div>
-    <div class="form-group">
+    <!-- <div class="form-group">
         <label for="price">Price</label>
         <input type="number" class="form-control" id="price" name="price" value="{{ $product->price }}" required>
-    </div>
+    </div> -->
     <div class="form-group">
         <label for="image">Product Image</label>
         <input type="file" class="form-control" id="image" name="image">

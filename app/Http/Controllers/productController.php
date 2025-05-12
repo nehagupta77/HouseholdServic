@@ -31,7 +31,6 @@ class productController extends Controller
         
         $request->validate([
             'name' => 'required',
-            'price' => 'required|numeric',
             'image' => 'nullable|mimes:jpg,bmp,png',
             'status' => 'required|in:0,1',
             'category' =>'required'
@@ -46,7 +45,7 @@ class productController extends Controller
             'category_id' => $request->category,
             'name' => $request->name,
             'description' => $request->description,
-            'price' => $request->price,
+           
             'image' => $image_name,
             'status' => $request->status
         ];

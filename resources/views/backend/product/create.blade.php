@@ -39,8 +39,8 @@
         <input type="text" class="form-control" id="name" name="name" required>
     </div>
     <div class="form-group">
-        <label for="description">Description</label>
-        <textarea class="form-control" id="description" name="description"></textarea>
+        <label for="tiny">Description</label>
+        <textarea class="form-control" id="tiny" name="description"></textarea>
     </div>
     <div class="form-group">
         <label for="price">Price</label>

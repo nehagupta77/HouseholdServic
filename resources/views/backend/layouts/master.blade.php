@@ -19,6 +19,13 @@
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('backend/assets/css/sb-admin-2.min.css')}}" rel="stylesheet">
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="https://cdn.tiny.cloud/1/r7oc3a244e0qdo8ooxo5c0q3908pimnrew2yzrwhn3vny456/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: 'textarea#tiny'
+        });
+    </script>
 
 </head>
 

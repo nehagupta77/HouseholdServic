@@ -30,10 +30,28 @@
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/animate.min.css')}}">
     <!--  Style CSS  -->
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/style.css')}}">
+
+    <style>
+.description {
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Show only 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all 0.3s ease;
+}
+.description.expanded {
+    -webkit-line-clamp: unset;
+    overflow: visible;
+}
+</style>
+
     <!-- Title -->
 </head>
 
 <body>
+
+    
 
     <!-- Start header section -->
     @include('frontend.includes.header')
@@ -66,7 +84,7 @@
                         <div class="service-details-thumbnail">
                             <img src='{{ asset("uploads/$product->image")}}' alt="">
                         </div>
-                        <H2>{{}}</H2>
+                        <H2>{{ $product->name  ?? ''}}</H2>
                         <div class="service-tabs wow animate fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
                             <ul class="nav nav-pills" id="pills-tab" role="tablist">
                                 <li class="nav-item" role="presentation">
@@ -83,33 +101,11 @@
                             <div class="tab-content" id="pills-tabContent">
                                 <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                                     <div class="service-overview  wow animate fadeInRight" data-wow-delay="400ms" data-wow-duration="1500ms">
-                                        <h4>Plumbing Training</h4>
-                                        <p>Obtain pain of because is pain, but because you nally circumstances more than some work um soluta nobis est eligendi optio cumque nihil impedit quo minus id quodOne advanced diverted domestic repeated bringing you old. Possible procured her trifling</p>
-                                        <div class="package">
-                                            <h4>Our Package</h4>
-                                            <ul class="package-list">
-                                                <li><i class="bi bi-check-all"></i>Page Load (time, size, number of requests).</li>
-                                                <li><i class="bi bi-check-all"></i>Adance Data analysis operation.</li>
-                                            </ul>
-                                        </div>
-                                        <div class="include-exclude">
-                                            <h4>What’s Included</h4>
-                                            <ul>
-                                                <li><i class="bi bi-circle-fill"></i>There are many variations of passages of Lorem Ipsum.</li>
-                                                <li><i class="bi bi-circle-fill"></i>Water Heater Repair Services</li>
-                                                <li><i class="bi bi-circle-fill"></i>Toilet Repair</li>
-                                            </ul>
-                                        </div>
-                                        <div class="include-exclude">
-                                            <h4>What’s Excluded</h4>
-                                            <ul>
-                                                <li><i class="bi bi-circle-fill"></i>Price of additional materials or parts (if needed)</li>
-                                                <li><i class="bi bi-circle-fill"></i>Transportation cost for carrying new materials/parts (if applicable)</li>
-                                            </ul>
-                                        </div>
+                                        <h4>{{ $product->name ?? ''}}</h4>
+                                        {!! $product->description ?? '' !!}   
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                <!-- <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                                     <div class="package">
                                         <h4>Our Package</h4>
                                         <ul class="package-list">
@@ -120,7 +116,7 @@
                                     </div><br>
                                     <p>Obtain pain of because is pain, but because you nally circumstances more than some work um soluta nobis est eligendi optio cumque nihil impedit quo minus id quodOne advanced diverted domestic repeated bringing you old. Possible procured her trifling</p><br>
                                     <p>Circumstances more than some work um soluta nobis est eligendi optio cumque nihil impedit quo minus id quodOne advanced diverted domestic repeated bringing you old. Possible procured her trifling Obtain pain of because is pain, but because you nally circumstances more than some work um soluta nobis est eligendi optio cumque nihil impedit quo minus id quodOne advanced diverted domestic repeated bringing you old. Possible procured her trifling</p>
-                                </div>
+                                </div> -->
                                 <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
                                     <div class="client-review">
                                         <h4>Review of Painting Services in Mirpur</h4>
@@ -264,18 +260,17 @@
                     <div class="service-sidebar">
                         <div class="service-widget wow animate fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
                             <div class="service-pack">
-                                <h4>Service Price <span><small>$</small>250</span></h4>
+                                <h4>Service Price <span><small>$</small>{{!! $product->price->price !!}}</span></h4>
                                 <div class="package">
                                     <h4>Our Package</h4>
                                     <ul class="package-list">
-                                        <li><i class="bi bi-check-all"></i>Garbage Disposal Services</li>
-                                        <li><i class="bi bi-check-all"></i>Water Heater Repair Services</li>
-                                        <li><i class="bi bi-check-all"></i>Toilet Repair</li>
-                                        <li><i class="bi bi-check-all"></i>Kitchen Cleaner</li>
+                                       <li class="description text-truncate" style="cursor: pointer;">{!! $product->description ?? '' !!}</li>
+                                        <a href="javascript:void(0);" class="read-more-btn">Read more</a>
+
                                     </ul>
                                 </div>
                                 <div class="book-btn">
-                                    <a href="contact.html">Order Now</a>
+                                    <a href="{{route('booking.index')}}">Order Now</a>
                                 </div>
                             </div>
                         </div>
@@ -501,6 +496,18 @@
     <script src="{{asset('frontend/assets/js/anime.min.js')}}"></script>
     <!-- Custom JS -->
     <script src="{{ asset('frontend/assets/js/custom.js')}}"></script>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const desc = document.querySelector('.description');
+    const btn = document.querySelector('.read-more-btn');
+
+    btn.addEventListener('click', function () {
+        desc.classList.toggle('expanded');
+        btn.textContent = desc.classList.contains('expanded') ? "Read less" : "Read more";
+    });
+});
+</script>
+
 
 </body>
 

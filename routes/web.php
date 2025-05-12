@@ -10,7 +10,7 @@ use App\Http\Controllers\SettingController;
 use App\Http\Controllers\SystemSettingController;
 use App\Http\Controllers\HomeController;
 use App\Services\SiteSettingService;
-
+use App\Http\Controllers\bookingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,3 +82,10 @@ Route::get('/pricing/delete/{id}', [PriceController::class, 'delete'])->name('pr
 //for Setting
 Route::get('/settings', [SettingController::class, 'system'])->name('setting.systemSetting');
 Route::post('/setting/store', [SystemSettingController::class, 'store'])->name('setting.systemSetting.store');
+
+// fro bookingservices
+Route::view('/booking','frontend.booking')->name('booking.index');
+Route::post('/booking-post',[bookingController::class,'store'])->name('booking.store');
+
+
+// Route::view('/signup', 'frontend.auth.signup')->name('frontend.signup');

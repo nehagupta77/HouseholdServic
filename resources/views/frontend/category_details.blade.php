@@ -59,7 +59,7 @@
                 </div>
             </div>
             <div class="row g-4">
-
+             
                 @forelse($products as $product)
                 <div class="col-md-6 col-lg-4 wow animate fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
                     <div class="single-service">
@@ -89,7 +89,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <h4><a href="{{ route('product.detail',$product->id)}}">{{ $product->description ?? ''}}</a></h4>
+                            <h4><a href="{{ route('product.detail',$product->id)}}">{!! $product->description ?? '' !!}</a></h4>
                             <div class="started">
                                 <span>Started At : <strong><small>$</small>{{ $product->price->price ?? ''}}</strong></span>
                             </div>
