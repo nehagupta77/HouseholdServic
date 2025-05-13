@@ -12,6 +12,7 @@ use App\Http\Controllers\HomeController;
 use App\Services\SiteSettingService;
 use App\Http\Controllers\bookingController;
 use App\Http\Controllers\WhishlistController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,9 +42,8 @@ Route::get('/logout',[UserController::class, 'logout'])->name('auth.logout');
 // Route::view('/master', 'backend.layouts.master');
 // Route::view('/dashboard', 'dashboard');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
 
 //for category
 Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
