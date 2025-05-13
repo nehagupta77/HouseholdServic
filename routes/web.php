@@ -35,6 +35,7 @@ Route::view('/login', 'frontend.auth.login')->name('frontend.login');
 Route::view('/signup', 'frontend.auth.signup')->name('frontend.signup');
 Route::post('/data', [UserController::class, 'signup'])->name('login.submit');
 Route::post('/checklogin',[UserController::class, 'checkLogin'])->name('index.submit');
+Route::get('/logout',[UserController::class, 'logout'])->name('auth.logout');
 
 //for layouts
 // Route::view('/master', 'backend.layouts.master');
