@@ -39,7 +39,7 @@
     <!-- Start header section -->
    @include('frontend.includes.header')
     <!-- End header section -->
-
+    <div class="container mt-3" id="notification-area"></div>
    
     <!-- Start offer-services section -->
     <section class="offer-services sec-m-top">
@@ -72,7 +72,7 @@
                         <div class="single-inner">
                             <div class="author-info">
                                 <div class="wish">
-                                    <a href="account.html"><i class="bi bi-suit-heart"></i></a>
+                                    <a href="javascript:void(0);" class="wishlist-btn" data-id="{{ $product->id }}" onclick="toggleWishlist(this)"><i class="bi {{ $product->in_wishlist ? 'bi-suit-heart-fill text-danger' : 'bi-suit-heart' }}"></i></a>
                                 </div>
                                 
                                 <div class="author-content">
@@ -136,6 +136,59 @@
     <script src="{{ asset('frontend/assets/js/anime.min.js')}}"></script>
     <!-- Custom JS -->
     <script src="{{ asset('frontend/assets/js/custom.js')}}"></script>
+
+    <script>
+        function toggleWishlist(element){
+                    const productId = element.getAttribute('data-id');
+                    $.ajax({
+                    url: `/wishlist/add/${productId}`,
+                    type: 'POST',
+                    data: {
+                        _token: "{{ csrf_token() }}"
+                    },
+                    success: function(response) {
+                         showNotification('success', response.message);
+                         const icon = element.querySelector('i');
+            
+                        if (response.in_wishlist) {
+                            icon.classList.remove('bi-suit-heart');
+                            icon.classList.add('bi-suit-heart-fill', 'text-danger');
+                        } else {
+                            icon.classList.remove('bi-suit-heart-fill', 'text-danger');
+                            icon.classList.add('bi-suit-heart');
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        if (xhr.status === 401) {
+                        showNotification('danger', 'Please login first to add items to your wishlist.');
+                        } else {
+                            showNotification('danger', 'Something went wrong. Please try again.');
+                            console.error('Error:', xhr);
+                        }
+                    }
+                });
+        }
+
+        function showNotification(type, message) {
+        const notificationHTML = `
+            <div class="alert alert-${type} alert-dismissible fade show" role="alert">
+                ${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        `;
+        const area = document.getElementById('notification-area');
+        area.innerHTML = notificationHTML;
+
+        // Auto-dismiss after 4 seconds
+        setTimeout(() => {
+            const alert = area.querySelector('.alert');
+            if (alert) {
+                alert.classList.remove('show');
+                alert.classList.add('hide');
+            }
+        }, 4000);
+    }
+    </script>
 
 </body>
 

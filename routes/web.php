@@ -11,6 +11,7 @@ use App\Http\Controllers\SystemSettingController;
 use App\Http\Controllers\HomeController;
 use App\Services\SiteSettingService;
 use App\Http\Controllers\bookingController;
+use App\Http\Controllers\WhishlistController;
 
 /*
 |--------------------------------------------------------------------------
@@ -94,4 +95,11 @@ Route::post('bookingdetails', [bookingController::class, 'store'])->name('bookin
 Route::get('bookingdetails/{id}/edit', [bookingController::class, 'edit'])->name('booking.editbooking');
 Route::put('bookingdtails/{id}', [bookingController::class, 'update'])->name('booking.update');
 Route::get('bookingdetails/{id}/delete', [bookingController::class, 'delete'])->name('booking.delete');
+
+//for wishlist
+Route::get('/wishlist', [WhishlistController::class, 'index'])->name('wishlist.index');
+Route::post('/wishlist/add/{productId}', [WhishlistController::class, 'addToWishlist'])->name('wishlist.add')->middleware('auth');
+Route::post('/wishlist/remove/{productId}', [WhishlistController::class, 'removeFromWishlist'])->name('wishlist.remove');
+Route::post('/wishlist/clear', [WhishlistController::class, 'clearWishlist'])->name('wishlist.clear');
+Route::post('/wishlist/check/{productId}', [WhishlistController::class, 'checkWishlist'])->name('wishlist.check');
 

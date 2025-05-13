@@ -26,8 +26,22 @@ class product extends Model
     }
 
     public function wishlistedBy()
+    {
+        return $this->belongsToMany(User::class, 'wishlist')->withTimestamps();
+    }
+
+    public function getInWishlistAttribute()
+    {
+        if (!auth()->check()) {
+            return false;
+        }
+
+        return $this->wishlists()->where('user_id', auth()->id())->exists();
+    }
+
+    public function wishlists()
 {
-    return $this->belongsToMany(User::class, 'wishlist')->withTimestamps();
+    return $this->hasMany(Wishlist::class);
 }
 
     

@@ -146,7 +146,7 @@ class CategoryController extends Controller
 
         $data['products'] = product::with('category','price')->where('category_id',$id)->get();
         $data['categories'] = Category::where('status', 1)->get();
-        // dd($products);
+        // dd($data);
         if($data['products']){
             return view('frontend.category_details',$data);
         }
