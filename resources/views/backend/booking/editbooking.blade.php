@@ -1,136 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-body {
-    background-color: #f8f9fa;
-    font-family: 'Segoe UI', sans-serif;
-}
+@extends('backend.layouts.master')
 
-.container {
-    max-width: 600px;
-    background-color: #fff;
-    padding: 25px 30px;
-    margin: 40px auto;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
+@section('title', 'Edit Booking')
 
-h2 {
-    text-align: center;
-    margin-bottom: 25px;
-    color: #333;
-}
+@section('content')
 
-form label {
-    display: block;
-    margin-bottom: 6px;
-    font-weight: 600;
-    color: #333;
-}
+<div class="container mt-4">
+    <h2>Edit Booking</h2>
 
-form input,
-form textarea {
-    width: 100%;
-    padding: 10px 14px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    outline: none;
-    font-size: 15px;
-    transition: border 0.3s;
-}
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul class="mb-0">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 
-form input:focus,
-form textarea:focus {
-    border-color: #007bff;
-}
-
-button[type="submit"] {
-    width: 100%;
-    background-color: #007bff;
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button[type="submit"]:hover {
-    background-color: #0056b3;
-}
-</style
-
-</head>
-<body>
-    
-
-@if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
-
-
-<div class="container mt-5">
-    <h2 class="mb-4">Edit serviceses</h2>
-
-<form action="{{ route('booking.update', $booking->id) }}" method="POST">
+    <form action="{{ route('booking.update', $booking->id) }}" method="POST">
         @csrf
+        @method('PUT')
 
-            @method('PUT') 
-
-
-        <!-- Full Name -->
-        <div class="mb-3">
-            <label for="full_name" class="form-label">Full Name</label>
-            <input type="text" name="full_name" class="form-control" value="{{ $booking->full_name }}" required>
-        </div>
-        <div class="mb-3">
-            <label for="mobile" class="form-label">Mobile Number</label>
-            <input type="tel" name="mobile" class="form-control" pattern="[0-9]{10}" value="{{ $booking->mobile }}"required>
+        <div class="form-group">
+            <label for="full_name">Full Name</label>
+            <input type="text" class="form-control" id="full_name" name="full_name" value="{{ $booking->full_name }}" required>
         </div>
 
-        <!-- Address -->
-        <div class="mb-3">
-            <label for="address" class="form-label">Address</label>
-            <textarea name="address" class="form-control" rows="2" required>{{ old('address', $booking->address ?? '') }}</textarea>
+        <div class="form-group">
+            <label for="mobile">Mobile Number</label>
+            <input type="tel" class="form-control" id="mobile" name="mobile" pattern="[0-9]{10}" value="{{ $booking->mobile }}" required>
         </div>
 
-        <!-- Date of Service -->
-        <div class="mb-3">
-            <label for="date" class="form-label">Preferred Date</label>
-            <input type="date" name="date" class="form-control" value="{{ $booking->date }}"required>
+        <div class="form-group">
+            <label for="address">Address</label>
+            <textarea class="form-control" id="address" name="address" rows="2" required>{{ old('address', $booking->address ?? '') }}</textarea>
         </div>
 
-        <!-- Preferred Time -->
-        <div class="mb-3">
-            <label for="time" class="form-label">Preferred Time</label>
-            <input type="time" name="time" class="form-control" value="{{ $booking->time }}"required>
+        <div class="form-group">
+            <label for="date">Preferred Date</label>
+            <input type="date" class="form-control" id="date" name="date" value="{{ $booking->date }}" required>
         </div>
 
-        <!-- Problem Description -->
-        <div class="mb-3">
-            <label for="problem_description" class="form-label">Problem Description</label>
-            <textarea name="problem_description" class="form-control" rows="3" required>{{ old('problem_description', $booking->problem_description ?? '') }}</textarea>
+        <div class="form-group">
+            <label for="time">Preferred Time</label>
+            <input type="time" class="form-control" id="time" name="time" value="{{ $booking->time }}" required>
         </div>
 
-        <!-- Submit Button -->
-         <button type="submit" class="btn btn-primary">Update</button>
-    <a href="{{ route('booking.bookingStatus') }}" class="btn btn-secondary">Back</a>
-</form>
+        <div class="form-group">
+            <label for="problem_description">Problem Description</label>
+            <textarea class="form-control" id="problem_description" name="problem_description" rows="3" required>{{ old('problem_description', $booking->problem_description ?? '') }}</textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update Booking</button>
+        <a href="{{ route('booking.bookingStatus') }}" class="btn btn-secondary">Back</a>
     </form>
 </div>
 
-    
-</body>
-</html>
+@endsection

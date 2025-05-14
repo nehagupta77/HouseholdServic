@@ -49,7 +49,7 @@
                     <div class="sec-title layout-1">
                         <div class="title-left">
                            
-                            <h2>Best Offered Services in {{ isset($products) ?  $products[0]->category->name : "" }}</h2>
+                            <h2>Best Offered Services in {{ (isset($products) && isset($products[0]->category->name)) ?  $products[0]->category->name : "" }}</h2>
                         </div>
                         <div class="title-right">
                             <strong>For Your Home</strong>

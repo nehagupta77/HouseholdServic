@@ -34,7 +34,8 @@
         {{-- Description --}}
         <div class="form-group mb-3">
             <label for="tiny">Description:</label>
-            <textarea class="form-control" id="tiny" name="description" value ='{{ $category ->description}}'></textarea>
+            <textarea class="form-control" id="tiny" name="description">{{ old('description', $category ->description)}}></textarea>
+    
         </div>
 
         {{-- Status --}}
