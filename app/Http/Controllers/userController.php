@@ -74,7 +74,7 @@ class UserController extends Controller
 
     public function logout(){
        if( Auth::check()){
-        Auth::logout();
+            Auth::logout();
        }
        return redirect()->route('frontend.login')->with('success', 'logout successful!');
 

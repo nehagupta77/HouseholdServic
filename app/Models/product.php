@@ -5,7 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Category;
-use App\Models\price;
+use App\Models\price;  
+use App\Models\User;  
 
 class product extends Model
 {
@@ -23,6 +24,25 @@ class product extends Model
     {
         return $this->hasOne(Price::class, 'product_id', 'id');
     }
+
+    public function wishlistedBy()
+    {
+        return $this->belongsToMany(User::class, 'wishlist')->withTimestamps();
+    }
+
+    public function getInWishlistAttribute()
+    {
+        if (!auth()->check()) {
+            return false;
+        }
+
+        return $this->wishlists()->where('user_id', auth()->id())->exists();
+    }
+
+    public function wishlists()
+{
+    return $this->hasMany(Wishlist::class);
+}
 
     
    protected $guarded = ['id'];

@@ -26,11 +26,13 @@
                         <div class="footer-widget">
                             <h4>Categories</h4>
                             <ul class="footer-menu">
-                               @forelse($categories as $category)
+                               @isset($categories)
+                                @forelse($categories as $category)
                                 <li><a href="{{ route('category.detail', $category->id)}}">{{ $category->name}}</a></li>
                                 @empty
                                 <li><a href="#">No categories found</a></li>
                                 @endforelse
+                                @endisset
                                 
                             </ul>
                         </div>
