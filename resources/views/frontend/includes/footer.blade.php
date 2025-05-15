@@ -8,7 +8,7 @@
                             <div class="footer-logo">
                                 <a href="index-2.html"><img src="assets/images/footer-logo.svg" alt=""></a>
                             </div>
-                            <p>{{ $globalSettings->get('footer_text')}}</p>
+                            <p><h3>© {{ date('Y') }} Household Services. All Rights Reserved.</h3>  {{ $globalSettings->get('footer_text')}}</p>
                             <!-- <div class="request-btn">
                                 <a href="contact.html">Request a Service</a>
                             </div> -->
@@ -26,11 +26,13 @@
                         <div class="footer-widget">
                             <h4>Categories</h4>
                             <ul class="footer-menu">
-                               @forelse($categories as $category)
+                               @isset($categories)
+                                @forelse($categories as $category)
                                 <li><a href="{{ route('category.detail', $category->id)}}">{{ $category->name}}</a></li>
                                 @empty
                                 <li><a href="#">No categories found</a></li>
                                 @endforelse
+                                @endisset
                                 
                             </ul>
                         </div>

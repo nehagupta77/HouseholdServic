@@ -42,7 +42,7 @@
         <div class="container-fluid">
             <div class="hero-wrapper">
                 <div class="hero-content wow animate fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
-                    <span>Wellcome Our {{ $globalSettings->get('name') }}</span>
+                    <span>Wellcome To our {{ $globalSettings->get('name') }}</span>
                     <h1>{{ $globalSettings->get('hero_text')}}</h1>
                     <p>{{ $globalSettings->get('agency_description')}}</p>
                     <div class="find-service">
@@ -56,7 +56,7 @@
                             </div>
                         </div>
                         <div class="suggest">
-                            <span>Suggest For You:</span>
+                            <span>Suggest For You: {{ (isset($products) && isset($products[0]->category->name)) ?  $products[0]->category->name : "" }}</span>
                             <ul class="suggest-list">
                                 
                             @forelse( $relatedCategories as $related )
@@ -99,10 +99,11 @@
                         <div class="creative-service wow animate fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
                             <div class="thumb">
                             <div class="card" style="width: 12rem;">
+                                
                                 <img src="{{ asset('uploads/' . $category->image) }}" class="card-img-top" alt="Category Image" style="height: 100px; width: 100px; object-fit: cover; margin: auto; padding-top: 10px;">
                                 <div class="card-body text-center">
                                     <h5 class="card-title" style="height:50px; overflow:hidden">{{ $category->name }}</h5>
-                                    <p class="card-text" style="height:50px; overflow:hidden">{{ $category->description }}</p>
+                                    <p class="card-text" style="height:50px; overflow:hidden">{{strip_tags ($category->description) }}</p>
                                     <!-- Add buttons or links if needed -->
                                     <!-- <a href="{{ route('category.detail', $category->id)}}" class="btn btn-primary btn-sm">View</a> -->
                                 </div>

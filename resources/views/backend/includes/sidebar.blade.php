@@ -5,7 +5,7 @@
     <div class="sidebar-brand-icon rotate-n-15">
         <i class="fas fa-laugh-wink"></i>
     </div>
-    <div class="sidebar-brand-text mx-3"> Admin</div>
+    <div class="sidebar-brand-text mx-3"> {{ $globalSettings->get('name')}}</div>
 </a>
 
 <!-- Divider -->
@@ -120,6 +120,12 @@
     <a class="nav-link" href="{{ route('setting.systemSetting')}}">
         <i class="fas fa-cogs"></i>
         <span>System Setting</span></a>
+</li>
+
+<li class="nav-item">
+    <a class="nav-link" href="{{ route('booking.bookingStatus')}}">
+        <i class="fas fa-cogs"></i>
+        <span>booking status</span></a>
 </li>
 
 

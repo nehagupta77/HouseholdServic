@@ -35,8 +35,7 @@
                     
                     <li><a href="contact.html">Contact Us</a></li>
                     @if(auth()->check())
-                    <li><a href="{{ route('login.submit')}}" onclick="confirmLogout()">Logout</a></li>
-                    <li>Hello, {{ auth()->user()->first_name}}</li>
+                    <li><a href="{{ route('auth.logout')}}">Logout</a></li>
                     @endif
                 </ul>
                 
