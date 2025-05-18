@@ -5,7 +5,7 @@
 @section('content')
 <a href="{{ route('product.create') }}" class="btn btn-primary mb-3">Create Product</a>
 <table class="table table-bordered">
-    <thead>
+    <thead style = " width: 100px;text-align: left;">
         <tr>
             <th>S.N</th>
             <th>Category</th>
@@ -13,6 +13,8 @@
             <th>Description</th>
             <th>Price</th>
             <th>Status</th>
+            <th>short description</th>
+            <th>Details</th>
             <th>Image</th>
             <th>Action</th>
         </tr>
@@ -27,6 +29,8 @@
                 <td>{!! $product->description !!}</td>
                 <td>{{ $product->price }}</td>
                 <td>{{ $product->status == 1 ? 'Active' : 'Inactive' }}</td>
+                <td>{{$product->short_description}}</td>
+                <td>{{$product->details}}</td>  
                 <td>
                    <a href = "{{ asset('uploads/' . $product->image) }} "  target="_blank" >  <img src="{{ asset('uploads/' . $product->image) }}" height='100px' width='100px'> </a>
                 </td>

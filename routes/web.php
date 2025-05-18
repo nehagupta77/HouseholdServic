@@ -99,7 +99,7 @@ Route::get('bookingdetails/{id}/delete', [bookingController::class, 'delete'])->
 
 //for wishlist
 Route::get('/wishlist', [WhishlistController::class, 'index'])->name('wishlist.index');
-Route::post('/wishlist/add/{productId}', [WhishlistController::class, 'addToWishlist'])->name('wishlist.add')->middleware('auth');
+Route::post('/wishlist/add', [WhishlistController::class, 'addToWishlist'])->name('wishlist.add')->middleware('auth');
 Route::post('/wishlist/remove/{productId}', [WhishlistController::class, 'removeFromWishlist'])->name('wishlist.remove');
 Route::post('/wishlist/clear', [WhishlistController::class, 'clearWishlist'])->name('wishlist.clear');
 Route::post('/wishlist/check/{productId}', [WhishlistController::class, 'checkWishlist'])->name('wishlist.check');
