@@ -66,7 +66,8 @@
                         <div class="service-details-thumbnail">
                             <img src='{{ asset("uploads/$product->image")}}' alt="">
                         </div>
-                        <H2>{{}}</H2>
+                        <H2></H2>
+                        <!-- {{}} -->
                         <div class="service-tabs wow animate fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
                             <ul class="nav nav-pills" id="pills-tab" role="tablist">
                                 <li class="nav-item" role="presentation">
