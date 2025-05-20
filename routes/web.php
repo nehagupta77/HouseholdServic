@@ -10,7 +10,9 @@ use App\Http\Controllers\SettingController;
 use App\Http\Controllers\SystemSettingController;
 use App\Http\Controllers\HomeController;
 use App\Services\SiteSettingService;
-
+use App\Http\Controllers\bookingController;
+use App\Http\Controllers\WhishlistController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,14 +36,14 @@ Route::view('/login', 'frontend.auth.login')->name('frontend.login');
 Route::view('/signup', 'frontend.auth.signup')->name('frontend.signup');
 Route::post('/data', [UserController::class, 'signup'])->name('login.submit');
 Route::post('/checklogin',[UserController::class, 'checkLogin'])->name('index.submit');
+Route::get('/logout',[UserController::class, 'logout'])->name('auth.logout');
 
 //for layouts
 // Route::view('/master', 'backend.layouts.master');
 // Route::view('/dashboard', 'dashboard');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
 
 //for category
 Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
@@ -82,3 +84,23 @@ Route::get('/pricing/delete/{id}', [PriceController::class, 'delete'])->name('pr
 //for Setting
 Route::get('/settings', [SettingController::class, 'system'])->name('setting.systemSetting');
 Route::post('/setting/store', [SystemSettingController::class, 'store'])->name('setting.systemSetting.store');
+
+// fro bookingservices
+Route::view('/booking','frontend.booking')->name('booking.index');
+Route::post('/booking-post',[bookingController::class,'store'])->name('booking.store');
+
+// for display bookin in aminpanel
+Route::get('/bookingdetails', [bookingController::class, 'bookingDetail'])->name('booking.bookingStatus');
+Route::get('booking/create', [bookingController::class, 'create'])->name('booking.create');
+Route::post('bookingdetails', [bookingController::class, 'store'])->name('booking.store');
+Route::get('bookingdetails/{id}/edit', [bookingController::class, 'edit'])->name('booking.editbooking');
+Route::put('bookingdtails/{id}', [bookingController::class, 'update'])->name('booking.update');
+Route::get('bookingdetails/{id}/delete', [bookingController::class, 'delete'])->name('booking.delete');
+
+//for wishlist
+Route::get('/wishlist', [WhishlistController::class, 'index'])->name('wishlist.index');
+Route::post('/wishlist/add/{productId}', [WhishlistController::class, 'addToWishlist'])->name('wishlist.add')->middleware('auth');
+Route::post('/wishlist/remove/{productId}', [WhishlistController::class, 'removeFromWishlist'])->name('wishlist.remove');
+Route::post('/wishlist/clear', [WhishlistController::class, 'clearWishlist'])->name('wishlist.clear');
+Route::post('/wishlist/check/{productId}', [WhishlistController::class, 'checkWishlist'])->name('wishlist.check');
+

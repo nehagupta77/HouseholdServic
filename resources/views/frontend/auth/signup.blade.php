@@ -37,7 +37,6 @@
 <body>
     <!-- /resources/views/post/create.blade.php -->
 
-<h1>Create Post</h1>
 
 @if ($errors->any())
     <div class="alert alert-danger">
@@ -51,111 +50,9 @@
 
 <!-- Create Post Form -->
 
-    <!--Start preloader area -->
-    <div class="egns-preloader">
-        <div class="container">
-            <div class="row d-flex justify-content-center">
-                <div class="col-6">
-                    <div class="circle-border">
-                        <div class="moving-circle"></div>
-                        <div class="moving-circle"></div>
-                        <div class="moving-circle"></div>
-                        <svg width="180px" height="150px" viewBox="0 0 187.3 93.7" preserveAspectRatio="xMidYMid meet">
-                            <path stroke="#5BB543" id="outline" fill="none" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z" />
-                            <path id="outline-bg" opacity="0.05" fill="none" stroke="#959595" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z" />
-                        </svg>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--End preloader area  -->
-
+   
     <!-- Start header section -->
-    <header class="header-2 sticky_top">
-        <!-- <div class="header-logo">
-            <a href="index-2.html"><img src="{{ asset('frontend/assets/images/home2/logo.svg')}}" alt=""></a>
-        </div> -->
-        <div class="main-menu">
-            <nav class="main-nav">
-                <div class="mobile-menu-logo">
-                    <a href="index-2.html"><img src="{{ asset('frontend/assets/images/home2/logo.svg')}}" alt=""></a>
-                    <div class="remove">
-                        <i class="bi bi-plus-lg"></i>
-                    </div>
-                </div>
-                <ul>
-                    <li class="has-child active">
-                        <a href="index-2.html">Home</a>
-                        <!-- <i class="bi bi-chevron-down"></i>
-                        <ul class="sub-menu">
-                            <li><a href="index-2.html">Home 01</a></li>
-                            <li><a href="index2.html">Home 02</a></li>
-                            <li><a href="index3.html">Home 03</a></li>
-                        </ul> -->
-                    </li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li class="has-child">
-                        <a href="service.html">Services</a>
-                        <i class="bi bi-chevron-down"></i>
-                        <ul class="sub-menu">
-                            <li><a href="service.html">Services</a></li>
-                            <li><a href="service-details.html">Service Details</a></li>
-                        </ul>
-                    </li>
-                    <!-- <li class="has-child">
-                        <a href="blog.html">Blogs</a>
-                        <i class="bi bi-chevron-down"></i>
-                        <ul class="sub-menu">
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="blog-sidebar.html">Blog Sidebar</a></li>
-                            <li><a href="blog-standard.html">Blog Standard</a></li>
-                            <li><a href="blog-details.html">Blog Details</a></li>
-                        </ul>
-                    </li> -->
-                    <li class="has-child">
-                        <a href="#">Pages</a>
-                        <!-- <i class="bi bi-chevron-down"></i>
-                        <ul class="sub-menu">
-                            <li><a href="login.html">Login</a></li>
-                            <li><a href="sign-up.html">Sign Up</a></li>
-                            <li><a href="error.html">Error 404</a></li>
-                            <li><a href="faq.html">FAQs</a></li>
-                            <li><a href="account.html">My Account</a></li>
-                        </ul> -->
-                    </li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-                <!-- <div class="my-account">
-                    <a href="account.html">My Account</a>
-                </div> -->
-            </nav>
-        </div>
-        <!-- <div class="header-right">
-            <div class="phone">
-                <div class="icon">
-                    <img src="{{ asset('frontend/assets/images/icons/phone.svg')}}" alt="">
-                </div>
-                <div class="phn-info">
-                    <span>Call Us Now</span>
-                    <a href="tel:01701111000">+880 170 1111 000</a>
-                </div>
-            </div>
-            <div class="wishlist">
-                <a href="account.html"><i class="bi bi-suit-heart"></i></a>
-            </div>
-            <div class="account-btn">
-                <a href="account.html">My Account</a>
-            </div>
-            <div class="mobile-menu">
-                <a href="javascript:void(0)" class="cross-btn">
-                    <span class="cross-top"></span>
-                    <span class="cross-middle"></span>
-                    <span class="cross-bottom"></span>
-                </a>
-            </div>
-        </div> -->
-    </header>
+    @include('frontend.includes.header')
     <!-- End header section -->
 
     <!-- Start breadcrumbs section -->
@@ -224,103 +121,7 @@
     <!-- End login-area section -->
 
     <!-- Start footer section -->
-    <!-- <footer class="footer-2">
-        <img src="{{ asset('frontend/assets/images/footer-left-shape.png')}}" alt="" class="line-shape">
-        <div class="container">
-            <div class="footer-top">
-                <div class="row gy-5">
-                    <div class="col-md-6 col-lg-5">
-                        <div class="footer-widget with-logo">
-                            <div class="footer-logo">
-                                <a href="index-2.html"><img src="{{ asset('frontend/assets/images/footer-logo.svg')}}" alt=""></a>
-                            </div>
-                            <p>Aenean fermentum sapien acena gravida. Fusce a ipsum metuslai. Suspendisse oi potenti.</p>
-                            <div class="request-btn">
-                                <a href="contact.html">Request a Service</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-2">
-                        <div class="footer-widget">
-                            <h4>Explore On</h4>
-                            <ul class="footer-menu">
-                                <li><a href="index-2.html">Home</a></li>
-                                <li><a href="blog.html">Blog Grid</a></li>
-                                <li><a href="#">Help & Support</a></li>
-                                <li><a href="service-details.html">Services Details</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Terms of use</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-2">
-                        <div class="footer-widget">
-                            <h4>Categories</h4>
-                            <ul class="footer-menu">
-                                <li><a href="service.html">Electronics</a></li>
-                                <li><a href="service.html">Driver Service</a></li>
-                                <li><a href="service.html">Electric & Plumbing</a></li>
-                                <li><a href="service.html">Gadgets Repair</a></li>
-                                <li><a href="service.html">Security Service</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="footer-widget">
-                            <h4>Contacts</h4>
-                            <div class="information">
-                                <div class="info">
-                                    <div class="icon">
-                                        <i class="fas fa-phone-alt"></i>
-                                    </div>
-                                    <div class="desc">
-                                        <a href="tel:01761111456">+880 176 1111 456</a>
-                                        <a href="tel:01761111555">+880 176 1111 555</a>
-                                    </div>
-                                </div>
-                                <div class="info">
-                                    <div class="icon">
-                                        <i class="far fa-envelope"></i>
-                                    </div>
-                                    <div class="desc">
-                                        <a href="https://demo-egenslab.b-cdn.net/cdn-cgi/l/email-protection#f891969e97b89d80999588949dd69b9795"><span class="__cf_email__" data-cfemail="7c15121a133c19041d110c1019521f1311">[email&#160;protected]</span></a>
-                                        <a href="https://demo-egenslab.b-cdn.net/cdn-cgi/l/email-protection#0e676068614e7d7b7e7e617c7a206d6163"><span class="__cf_email__" data-cfemail="9af3f4fcf5dae9efeaeaf5e8eeb4f9f5f7">[email&#160;protected]</span></a>
-                                    </div>
-                                </div>
-                                <div class="info">
-                                    <div class="icon">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                    </div>
-                                    <div class="desc">
-                                        <p>168/170, Avenue 01, Mirpur DOHS, Bangladesh</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div class="copy-right">
-                            <span>Copyright 2022 Serve | Design By <a href="https://www.egenslab.com/">Egens Lab</a></span>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="footer-social-media">
-                            <ul>
-                                <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="https://www.pinterest.com/"><i class="fab fa-pinterest-p"></i></a></li>
-                                <li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer> -->
+    @include('frontend.includes.footer')
     <!-- End footer section -->
 
     <!--  Main jQuery  -->
