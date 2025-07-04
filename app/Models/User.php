@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Models\product;
+use App\Models\bookings;
 
 class User extends Authenticatable
 {
@@ -29,6 +30,11 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(product::class, 'wishlist')->withTimestamps();
     }
+
+    public function bookings()
+{
+    return $this->hasMany(bookings::class);
+}
 
 //     $user->wishlist()->attach($productId);
 

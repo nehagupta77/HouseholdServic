@@ -50,17 +50,19 @@ class UserController extends Controller
             'password' => 'required|min:5|max:12' 
         ]);
 
-        $user = User::where('email',$request->email)->first();
+        try{
+
+            $user = User::where('email',$request->email)->first();
         // dd($user);
         if($user){
             if(Hash::check($request->password, $user->password)){
                 Auth::login($user);
-
+                $request->session()->regenerate();
                 session([
                 'user_id' => $user->id,
                 'is_authenticated' => true,
             ]);
-                //return redirect()->route('dashboard');
+                return redirect()->intended(route('dashboard'));
             }else{
                 $request->session()->flash('failed', 'Please enter correct password');
             }
@@ -69,6 +71,10 @@ class UserController extends Controller
         }
         return redirect()->route('home')->with('success', 'login successful!');
 
+
+        }catch(\Exception $e){
+            dd($e);
+        }
 
     }
 

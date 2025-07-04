@@ -13,6 +13,9 @@ use App\Services\SiteSettingService;
 use App\Http\Controllers\bookingController;
 use App\Http\Controllers\WhishlistController;
 use App\Http\Controllers\DashboardController;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\StripeController;
+use App\Http\Controllers\KhaltiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -86,9 +89,8 @@ Route::get('/settings', [SettingController::class, 'system'])->name('setting.sys
 Route::post('/setting/store', [SystemSettingController::class, 'store'])->name('setting.systemSetting.store');
 
 // fro bookingservices
-Route::view('/booking','frontend.booking')->name('booking.index');
+Route::get('/booking/{id}',[bookingController::class,'index'])->name('booking.index');
 Route::post('/booking-post',[bookingController::class,'store'])->name('booking.store');
-
 // for display bookin in aminpanel
 Route::get('/bookingdetails', [bookingController::class, 'bookingDetail'])->name('booking.bookingStatus');
 Route::get('booking/create', [bookingController::class, 'create'])->name('booking.create');
@@ -103,4 +105,17 @@ Route::post('/wishlist/add/{productId}', [WhishlistController::class, 'addToWish
 Route::post('/wishlist/remove/{productId}', [WhishlistController::class, 'removeFromWishlist'])->name('wishlist.remove');
 Route::post('/wishlist/clear', [WhishlistController::class, 'clearWishlist'])->name('wishlist.clear');
 Route::post('/wishlist/check/{productId}', [WhishlistController::class, 'checkWishlist'])->name('wishlist.check');
+
+
+//for whishlist list
+Route::get('/wishlistfront', [WhishlistController::class, 'front'])->name('wishlist.index.front');
+Route::get('/bookingfront', [bookingController::class, 'front'])->name('booking.index.front');
+
+
+Route::get('/checkout/{id}', [StripeController::class, 'checkout'])->name('stripe.checkout');
+Route::post('/charge', [StripeController::class, 'charge'])->name('stripe.charge');
+
+
+Route::post('/khalti-init', [KhaltiController::class, 'init'])->name('khalti.init');
+Route::get('/khalti-check', [KhaltiController::class, 'check'])->name('khalti.check');
 
