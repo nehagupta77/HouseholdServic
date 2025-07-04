@@ -87,7 +87,8 @@ Route::post('/setting/store', [SystemSettingController::class, 'store'])->name('
 
 // fro bookingservices
 Route::view('/booking','frontend.booking')->name('booking.index');
-Route::post('/booking-post',[bookingController::class,'store'])->name('booking.store');
+Route::get('/booking/{id}', [bookingController::class, 'showBookingForm'])->name('booking.index');
+Route::post('/booking-post/{id}',[bookingController::class,'store'])->name('booking.store')->middleware('auth');
 
 // for display bookin in aminpanel
 Route::get('/bookingdetails', [bookingController::class, 'bookingDetail'])->name('booking.bookingStatus');

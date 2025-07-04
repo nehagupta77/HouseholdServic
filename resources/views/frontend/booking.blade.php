@@ -84,7 +84,7 @@ button[type="submit"]:hover {
 <div class="container mt-5">
     <h2 class="mb-4">Book a Service</h2>
 
-    <form action="{{ route('booking.store')}}" method="POST">
+    <form action="{{ route('booking.store', $product->id) }}" method="POST">
         @csrf
 
         <!-- Full Name -->
@@ -93,6 +93,8 @@ button[type="submit"]:hover {
             <input type="text" name="full_name" class="form-control" required>
         </div>
 
+        <!-- product_id -->
+        <input type="hidden" name="product_id" value="{{ $product->id }}"> 
         <!-- Mobile Number -->
         <div class="mb-3">
             <label for="mobile" class="form-label">Mobile Number</label>
