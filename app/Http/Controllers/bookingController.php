@@ -6,15 +6,30 @@ use Illuminate\Http\Request;
 use App\Models\bookings;
 use App\Models\Category;
 use App\Models\product;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use DB;
 
 class bookingController extends Controller
 {
     public function index(){
+
         return view('frontend.booking');
     }
 
+    public function showBookingForm($id)
+{
+    $product = product::findOrFail($id);
+    return view('frontend.booking', compact('product'));
+}
+
+
     public function store(Request $request){
+
+
+        // if(!Auth::check()){
+        //     return redirect()->back();
+        // }
 
         $request->validate([
             'full_name' => 'required|string|max:255',
@@ -35,7 +50,10 @@ class bookingController extends Controller
             'date' => $request->date,
             'time' => $request->time,
             'problem_description' => $request->problem_description,
+            'user_id' => Auth::user()->id ?? '',
+            'product_id'=> $request->product_id,
         ];
+        // dd($data);
         bookings::insert($data);
         return redirect()->route('home')->with('success', 'Booking created successfully.');
     }
@@ -47,7 +65,7 @@ class bookingController extends Controller
     }
 
     // Store booking in 'booking' table after edit
-    public function bookingstore(Request $request)
+    public function bookingstore(Request $request,$id)
     {
         $request->validate([
             'full_name' => 'required|string|max:255',
@@ -64,6 +82,8 @@ class bookingController extends Controller
             'date' => $request->date,
             'time' => $request->time,
             'problem_description' => $request->problem_description,
+            'user_id' => Auth::id(),
+            'product_id' => $id, 
         ];
 
         booking::insert($data); 

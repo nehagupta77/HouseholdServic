@@ -270,7 +270,8 @@
                                     </ul>
                                 </div>
                                 <div class="book-btn">
-                                    <a href="{{route('booking.index')}}">Order Now</a>
+                                    <a href="{{ route('booking.index', $product->id) }}">Book Now</a>
+
                                 </div>
                             </div>
                         </div>

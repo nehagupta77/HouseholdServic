@@ -87,7 +87,8 @@ Route::post('/setting/store', [SystemSettingController::class, 'store'])->name('
 
 // fro bookingservices
 Route::view('/booking','frontend.booking')->name('booking.index');
-Route::post('/booking-post',[bookingController::class,'store'])->name('booking.store');
+Route::get('/booking/{id}', [bookingController::class, 'showBookingForm'])->name('booking.index');
+Route::post('/booking-post/{id}',[bookingController::class,'store'])->name('booking.store')->middleware('auth');
 
 // for display bookin in aminpanel
 Route::get('/bookingdetails', [bookingController::class, 'bookingDetail'])->name('booking.bookingStatus');
@@ -99,7 +100,7 @@ Route::get('bookingdetails/{id}/delete', [bookingController::class, 'delete'])->
 
 //for wishlist
 Route::get('/wishlist', [WhishlistController::class, 'index'])->name('wishlist.index');
-Route::post('/wishlist/add/{productId}', [WhishlistController::class, 'addToWishlist'])->name('wishlist.add')->middleware('auth');
+Route::post('/wishlist/add', [WhishlistController::class, 'addToWishlist'])->name('wishlist.add')->middleware('auth');
 Route::post('/wishlist/remove/{productId}', [WhishlistController::class, 'removeFromWishlist'])->name('wishlist.remove');
 Route::post('/wishlist/clear', [WhishlistController::class, 'clearWishlist'])->name('wishlist.clear');
 Route::post('/wishlist/check/{productId}', [WhishlistController::class, 'checkWishlist'])->name('wishlist.check');

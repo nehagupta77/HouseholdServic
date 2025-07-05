@@ -141,9 +141,10 @@
         function toggleWishlist(element){
                     const productId = element.getAttribute('data-id');
                     $.ajax({
-                    url: `/wishlist/add/${productId}`,
+                    url: "{{ route('wishlist.add')}}",
                     type: 'POST',
                     data: {
+                            id: productId,
                         _token: "{{ csrf_token() }}"
                     },
                     success: function(response) {

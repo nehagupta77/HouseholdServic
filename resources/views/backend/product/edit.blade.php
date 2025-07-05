@@ -35,6 +35,16 @@
         <label for="image">Product Image</label>
         <input type="file" class="form-control" id="image" name="image">
     </div>
+
+    <div class="form-group">
+        <label for="image">Short_description</label>
+        <input type="text" class="form-control" id="details" name="details">
+    </div>
+
+     <div class="form-group">
+        <label for="image">Details</label>
+        <input type="text" class="form-control" id="details" name="details">
+    </div>
     <div class="form-group">
         <label for="status">Status</label>
         <select class="form-control" id="status" name="status" required>

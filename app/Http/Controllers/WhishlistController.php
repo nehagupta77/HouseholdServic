@@ -12,9 +12,17 @@ class WhishlistController extends Controller
         return view('wishlist.index', compact('wishlist'));
     }
 
-    public function addToWishlist(Request $request, $productId)
+    public function addToWishlist(Request $request)
     {
-       $user = auth()->user();
+
+        $request->validate([
+            'id' => 'required|exists:product,id',
+        ]);
+
+        try{
+
+             $productId = $request->input('id');
+         $user = auth()->user();
 
     
     if ($user->wishlist()->where('product_id', $productId)->exists()) {
@@ -23,7 +31,7 @@ class WhishlistController extends Controller
             'message' => 'Product is already in your wishlist.'
         ], 200);
     }
-
+    
  
     $user->wishlist()->attach($productId);
 
@@ -31,6 +39,12 @@ class WhishlistController extends Controller
         'status' => 'success',
         'message' => 'Product successfully added to your wishlist.'
     ], 200);
+
+        }catch(\Exception $e){
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
+
+       
     }
 
     public function remove(Request $request, $productId)

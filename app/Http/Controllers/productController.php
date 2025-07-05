@@ -33,7 +33,9 @@ class productController extends Controller
             'name' => 'required',
             'image' => 'nullable|mimes:jpg,bmp,png',
             'status' => 'required|in:0,1',
-            'category' =>'required'
+            'category' =>'required',
+            'short_description' => 'nullable|string|max:255',  
+            'details' => 'nullable|string',
         ]);
 
         $image_name = null;
@@ -47,7 +49,10 @@ class productController extends Controller
             'description' => $request->description,
            
             'image' => $image_name,
-            'status' => $request->status
+            'status' => $request->status,
+            'short_description' => $request->short_description,
+            'details'=>$request->details
+
         ];
         Product::insert($data);
         return redirect()->route('product.index');
@@ -86,7 +91,9 @@ class productController extends Controller
             $request->validate([
                 'name' => 'required',
                 'status' => 'required',
-                'description' => 'required'
+                'description' => 'required',
+                'short_description' => 'nullable|string|max:255',  
+            'details' => 'nullable|string',
             ]);
     
             $image_name = null;
@@ -114,7 +121,9 @@ class productController extends Controller
             $data =[
                 'name' =>$request->name,
                 'status'=> $request->status ?? 0,
-                'description' => $request->description
+                'description' => $request->description,
+                'Short_description' => $request->Short_description,
+               'details'=>$request->details
             ];
             
             if(!empty($image_name)){
