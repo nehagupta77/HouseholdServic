@@ -22,9 +22,9 @@
                             <li><a href="service-details.html">Service Details</a></li>
                         </ul>
                     </li>
-                   
+                   @if(!auth()->check())
                     <li class="has-child">
-                        <a href="#">Pages</a>
+                        <a href="#">Login/Signup</a>
                         <i class="bi bi-chevron-down"></i>
                         <ul class="sub-menu">
                             <li><a href="{{ route('frontend.login') }}">Login</a></li>
@@ -32,11 +32,18 @@
                             
                         </ul>
                     </li>
+                     @endif
+
+                     @if(auth()->check())
+                        <li><a href="{{ route('wishlist.index.front')}}">My Whishlist</a></li>
+                        <li><a href="{{ route('booking.index.front')}}">My Bookings</a></li>
+                     @endif
                     
-                    <li><a href="contact.html">Contact Us</a></li>
+                    
                     @if(auth()->check())
                     <li><a href="{{ route('auth.logout')}}">Logout</a></li>
                     @endif
+                    <li><a href="contact.html">Contact Us</a></li>
                 </ul>
                 
             </nav>

@@ -270,11 +270,11 @@
                                     </ul>
                                 </div>
                                 <div class="book-btn">
-                                    <a href="{{route('booking.index')}}">Order Now</a>
+                                    <a href="{{route('booking.index',$product->id)}}">Order Now</a>
                                 </div>
                             </div>
                         </div>
-                        <div class="service-widget wow animate fadeInRight" data-wow-delay="400ms" data-wow-duration="1500ms">
+                        <!-- <div class="service-widget wow animate fadeInRight" data-wow-delay="400ms" data-wow-duration="1500ms">
                             <div class="about-seller">
                                 <div class="thumb">
                                     <img src="{{ asset('frontend/assets/images/seller.png')}}" alt="">
@@ -305,7 +305,7 @@
                                     <li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
                                 </ul>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

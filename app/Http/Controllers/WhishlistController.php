@@ -109,4 +109,11 @@ class WhishlistController extends Controller
 
         return response()->json($products);
     }
+
+
+    public function front(){
+   $mylists = auth()->user()->wishlist()->with('price')->get();
+
+      return view('frontend.whishlist', compact('mylists'));
+    }
 }

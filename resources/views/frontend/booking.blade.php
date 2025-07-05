@@ -83,6 +83,7 @@ button[type="submit"]:hover {
 
 <div class="container mt-5">
     <h2 class="mb-4">Book a Service</h2>
+     {{ isset($product) ? "Service Name:" .$product->name : ''}} </br>
 
     <form action="{{ route('booking.store')}}" method="POST">
         @csrf
@@ -90,7 +91,7 @@ button[type="submit"]:hover {
         <!-- Full Name -->
         <div class="mb-3">
             <label for="full_name" class="form-label">Full Name</label>
-            <input type="text" name="full_name" class="form-control" required>
+            <input type="text" name="full_name" class="form-control" value="{{ auth()->check() ?  auth()->user()->first_name : ''}}" required readonly>
         </div>
 
         <!-- Mobile Number -->
@@ -108,7 +109,7 @@ button[type="submit"]:hover {
         <!-- Date of Service -->
         <div class="mb-3">
             <label for="date" class="form-label">Preferred Date</label>
-            <input type="date" name="date" class="form-control" required>
+            <input type="date" name="date" class="form-control" required min="{{ date('Y-m-d') }}">
         </div>
 
         <!-- Preferred Time -->
